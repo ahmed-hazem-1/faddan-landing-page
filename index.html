@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Faddan | فدّان — Autonomous Under-Canopy Spot-Spraying Robotics</title>
+  <title>Faddan — Autonomous Under-Canopy Spot-Spraying Robotics</title>
 
   <!-- Google Fonts: Plus Jakarta Sans (English) & Cairo (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,47 +38,40 @@
 
   <style>
     /* ========================================================= */
-    /* FLUID DESIGN SYSTEM: CLAMP(MIN, PREFERRED, MAX)           */
-    /* Continuously scales with viewport without breaking bounds */
+    /* MINIMALIST FLUID DESIGN SYSTEM                            */
     /* ========================================================= */
     :root {
       /* Fluid Typography */
-      --fluid-h1: clamp(1.4rem, 1.05rem + 1.9vw, 2.65rem);         /* 22.4px → 42.4px */
-      --fluid-h2: clamp(1.1rem, 0.9rem + 1.1vw, 1.85rem);          /* 17.6px → 29.6px */
-      --fluid-h3: clamp(0.9rem, 0.82rem + 0.4vw, 1.15rem);         /* 14.4px → 18.4px */
-      --fluid-body: clamp(0.72rem, 0.68rem + 0.18vw, 0.82rem);     /* 11.5px → 13.1px */
-      --fluid-caption: clamp(0.62rem, 0.59rem + 0.13vw, 0.72rem);  /* 9.9px → 11.5px */
-      --fluid-micro: clamp(0.56rem, 0.54rem + 0.1vw, 0.65rem);     /* 9px → 10.4px */
+      --fluid-h1: clamp(1.65rem, 1.25rem + 1.2vw, 2.35rem);        /* 26px → 37.6px */
+      --fluid-h2: clamp(1.25rem, 1.05rem + 0.7vw, 1.65rem);        /* 20px → 26.4px */
+      --fluid-h3: clamp(1.0rem, 0.92rem + 0.3vw, 1.18rem);         /* 16px → 18.8px */
+      --fluid-body: clamp(0.82rem, 0.78rem + 0.15vw, 0.92rem);     /* 13.1px → 14.7px */
+      --fluid-caption: clamp(0.72rem, 0.69rem + 0.12vw, 0.82rem);  /* 11.5px → 13.1px */
+      --fluid-micro: clamp(0.65rem, 0.62rem + 0.08vw, 0.72rem);    /* 10.4px → 11.5px */
 
-      /* Fluid Spacing */
-      --fluid-py-section: clamp(2.5rem, 1.5rem + 3.2vw, 4.5rem);   /* 40px → 72px */
-      --fluid-card-p: clamp(1.15rem, 0.85rem + 1.5vw, 2.5rem);     /* 18px → 40px */
-      --fluid-star-size: clamp(230px, 170px + 17vw, 370px);        /* 230px → 370px */
-      --fluid-demo-h: clamp(240px, 200px + 11vw, 295px);           /* 240px → 295px */
+      /* Dynamic Components Sizing */
+      --fluid-star-size: clamp(220px, 170px + 10vw, 320px);
+      --fluid-demo-h: clamp(230px, 190px + 6vw, 280px);
     }
 
-    .fluid-h1 { font-size: var(--fluid-h1); line-height: 1.15; }
-    .fluid-h2 { font-size: var(--fluid-h2); line-height: 1.25; }
-    .fluid-h3 { font-size: var(--fluid-h3); line-height: 1.35; }
-    .fluid-body { font-size: var(--fluid-body); line-height: 1.6; }
-    .fluid-caption { font-size: var(--fluid-caption); line-height: 1.5; }
-    .fluid-micro { font-size: var(--fluid-micro); }
-    .fluid-card { padding: var(--fluid-card-p); }
-    .fluid-section { padding-top: var(--fluid-py-section); padding-bottom: var(--fluid-py-section); }
+    .fluid-h1 { font-size: var(--fluid-h1); line-height: 1.25; }
+    .fluid-h2 { font-size: var(--fluid-h2); line-height: 1.32; }
+    .fluid-h3 { font-size: var(--fluid-h3); line-height: 1.38; }
+    .fluid-body { font-size: var(--fluid-body); line-height: 1.7; }
+    .fluid-caption { font-size: var(--fluid-caption); line-height: 1.6; }
+    .fluid-micro { font-size: var(--fluid-micro); line-height: 1.45; }
     .fluid-star { width: var(--fluid-star-size); height: var(--fluid-star-size); }
     .fluid-demo-viewport { height: var(--fluid-demo-h); }
 
-    /* Arabic fluid typography line-heights */
+    /* Arabic typography line-heights */
     html[dir="rtl"] body {
       font-family: 'Cairo', system-ui, sans-serif;
     }
-    html[dir="rtl"] .fluid-h1 { line-height: 1.35; }
-    html[dir="rtl"] .fluid-h2 { line-height: 1.4; }
-    html[dir="rtl"] .fluid-body { line-height: 1.7; }
+    html[dir="rtl"] .fluid-h1 { line-height: 1.4; }
+    html[dir="rtl"] .fluid-h2 { line-height: 1.45; }
+    html[dir="rtl"] .fluid-body { line-height: 1.8; }
 
-    /* ========================================================= */
-    /* 1. HIGH-PERFORMANCE UNIFIED MULTI-ORB BACKGROUND (60 FPS) */
-    /* ========================================================= */
+    /* Unified Multi-Orb Ambient Background */
     body {
       background-color: #05140B;
       color: #F8FAFC;
@@ -107,47 +100,47 @@
     }
 
     .orb-1 {
-      width: clamp(380px, 300px + 16vw, 560px);
-      height: clamp(380px, 300px + 16vw, 560px);
+      width: clamp(380px, 300px + 16vw, 600px);
+      height: clamp(380px, 300px + 16vw, 600px);
       top: -6%;
       left: 20%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.06) 45%, transparent 70%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.07) 45%, transparent 70%);
       animation: drift1 18s ease-in-out infinite alternate;
     }
 
     .orb-2 {
-      width: clamp(320px, 260px + 12vw, 440px);
-      height: clamp(320px, 260px + 12vw, 440px);
-      top: 15%;
-      right: -8%;
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, rgba(16, 185, 129, 0.04) 50%, transparent 72%);
+      width: clamp(320px, 260px + 12vw, 480px);
+      height: clamp(320px, 260px + 12vw, 480px);
+      top: 18%;
+      right: -6%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.16) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 72%);
       animation: drift2 22s ease-in-out infinite alternate;
     }
 
     .orb-3 {
-      width: clamp(350px, 280px + 14vw, 500px);
-      height: clamp(350px, 280px + 14vw, 500px);
-      top: 45%;
+      width: clamp(350px, 280px + 14vw, 520px);
+      height: clamp(350px, 280px + 14vw, 520px);
+      top: 48%;
       left: -8%;
-      background: radial-gradient(circle, rgba(22, 101, 52, 0.25) 0%, rgba(15, 60, 32, 0.08) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(22, 101, 52, 0.28) 0%, rgba(15, 60, 32, 0.09) 50%, transparent 70%);
       animation: drift3 24s ease-in-out infinite alternate;
     }
 
     .orb-4 {
-      width: clamp(340px, 280px + 12vw, 460px);
-      height: clamp(340px, 280px + 12vw, 460px);
+      width: clamp(340px, 280px + 12vw, 500px);
+      height: clamp(340px, 280px + 12vw, 500px);
       bottom: -6%;
       right: 10%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, transparent 70%);
       animation: drift4 20s ease-in-out infinite alternate;
     }
 
     .orb-5 {
-      width: clamp(300px, 240px + 12vw, 420px);
-      height: clamp(300px, 240px + 12vw, 420px);
-      bottom: 8%;
-      left: 15%;
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, transparent 68%);
+      width: clamp(300px, 240px + 12vw, 440px);
+      height: clamp(300px, 240px + 12vw, 440px);
+      bottom: 12%;
+      left: 12%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, transparent 68%);
       animation: drift5 26s ease-in-out infinite alternate;
     }
 
@@ -175,13 +168,11 @@
     .ambient-diffuse {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 30%, transparent 0%, rgba(5, 20, 11, 0.42) 85%);
+      background: radial-gradient(circle at 50% 30%, transparent 0%, rgba(5, 20, 11, 0.45) 85%);
       pointer-events: none;
     }
 
-    /* ========================================================= */
-    /* 2. DYNAMIC CURVED MOVING STAR BORDER                      */
-    /* ========================================================= */
+    /* Star Morph Animation */
     .star-morph-wrapper {
       position: relative;
       padding: 3px;
@@ -222,10 +213,10 @@
 
     .star-glow-aura {
       position: absolute;
-      inset: -8px;
+      inset: -10px;
       border-radius: inherit;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
-      filter: blur(12px);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, transparent 70%);
+      filter: blur(14px);
       z-index: -1;
       pointer-events: none;
     }
@@ -245,34 +236,52 @@
       pointer-events: auto;
     }
 
-    /* Floating Cards */
+    /* Glass Cards */
     .floating-layer {
-      background-color: rgba(11, 34, 21, 0.82);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: background-color 0.25s ease, border-color 0.25s ease;
+      background: rgba(11, 34, 21, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .floating-wide-card {
-      background-color: rgba(11, 34, 21, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* Floating White Card Layer (Alternating Sections) */
-    .floating-white-card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.96) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(16, 185, 129, 0.15);
+      background: rgba(11, 34, 21, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      color: #0F172A;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.55);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floating-wide-card:hover {
+      border-color: rgba(52, 211, 153, 0.28);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65), 0 0 25px rgba(16, 185, 129, 0.12);
+    }
+
+    /* Custom range input */
+    input[type=range] {
+      accent-color: #10B981;
+    }
+
+    /* Custom scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(16, 185, 129, 0.4);
+      border-radius: 9999px;
     }
 
     /* Scroll reveal */
     .scroll-reveal {
       opacity: 0;
-      transform: translate3d(0, 18px, 0);
+      transform: translate3d(0, 20px, 0);
       transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .scroll-reveal.visible {
@@ -280,7 +289,7 @@
       transform: translate3d(0, 0, 0);
     }
 
-    /* FAQ accordion chevron transition */
+    /* FAQ accordion */
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -288,12 +297,12 @@
       opacity: 0;
     }
     .faq-item.active .faq-answer {
-      max-height: 380px;
+      max-height: 400px;
       opacity: 1;
     }
     .faq-item.active .faq-icon {
       transform: rotate(180deg);
-      color: #34D399;
+      color: #10B981;
     }
   </style>
 </head>
@@ -312,528 +321,522 @@
     <div class="ambient-diffuse"></div>
   </div>
 
-  <!-- Content Gliding Container -->
+  <!-- Content Container -->
   <div class="relative z-10 flex flex-col justify-between min-h-screen w-full">
 
     <!-- ============================================================ -->
-    <!-- ANNOUNCEMENT BAR (Fluid & Dismissible)                       -->
+    <!-- NAVBAR (Full Width, Integrated at Hero, No Curves/Margins)   -->
+    <!-- Transitions dynamically on scroll without borders at top    -->
     <!-- ============================================================ -->
-    <div id="announcement-bar" class="w-full bg-[#0E2818]/95 backdrop-blur-md border-b border-white/5 py-2 px-3 sm:px-4 fluid-caption text-white/90 sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
-        <div class="flex items-center gap-2 truncate">
-          <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping shrink-0"></span>
-          <span class="font-semibold text-brand-accent shrink-0" data-i18n="ann_badge">Pilot 2026:</span>
-          <span class="text-white/80 truncate" data-i18n="ann_text">Built for Egyptian greenhouses • 100% Offline Edge Vision</span>
-        </div>
-        <div class="flex items-center gap-2 shrink-0">
-          <span class="hidden md:inline fluid-micro text-white/50" data-i18n="ann_sub">Ismailia · Sharqia · Beheira</span>
-          <button onclick="dismissAnnouncement()" class="text-white/60 hover:text-white p-1 leading-none text-base">&times;</button>
-        </div>
-      </div>
-    </div>
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+        
+        <!-- Brand Logo Wordmark -->
+        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105 shadow-inner overflow-hidden">
+            <img src="assets/faddan-logo.png" alt="Faddan Logo" class="w-full h-full object-contain transform scale-90" />
+          </div>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white leading-none" data-i18n="brand_name">Faddan</span>
+        </a>
 
-    <!-- ============================================================ -->
-    <!-- NAVBAR (Fluid Responsive & Wider Dynamic Spacing)             -->
-    <!-- ============================================================ -->
-    <header id="main-header" class="w-[min(96vw,1360px)] mx-auto px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between sticky top-[33px] sm:top-[37px] z-40 bg-[#05140B]/90 backdrop-blur-lg border border-white/10 rounded-2xl mt-1 sm:mt-2 shadow-lg shadow-black/30 transition-all">
-      
-      <!-- Brand Logo Wordmark -->
-      <a href="#" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
-        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
-          <img src="assets/faddan-logo.png" alt="Faddan Logo" class="w-full h-full object-contain" />
-        </div>
-        <div class="flex flex-col">
-          <span class="font-bold fluid-body tracking-tight text-white leading-none">faddan</span>
-          <span class="fluid-micro uppercase tracking-widest text-brand-accent font-semibold mt-0.5" data-i18n="tagline">Agri-Robotics</span>
-        </div>
-      </a>
+        <!-- Minimalist Navigation Links (Desktop) -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2 xl:gap-3 text-[13px] font-medium text-white/70">
+          <a href="#hero" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_tech">Technology</a>
+          <a href="#solution-showcase" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_canopy">Under-Canopy</a>
+          <a href="#problem-section" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_math">78.6% Proof</a>
+          <a href="#features-section" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_features">Features</a>
+          <a href="#dashboard-section" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_os">Agronomist OS</a>
+          <a href="#roi-section" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_roi">Economics</a>
+          <a href="#faq-section" class="px-2.5 py-1 rounded hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap" data-i18n="nav_faq">FAQ</a>
+        </nav>
 
-      <!-- Minimalist Dynamic Navigation Links (Desktop) -->
-      <nav class="hidden lg:flex items-center gap-1 xl:gap-2.5 fluid-caption font-medium text-white/75">
-        <a href="#hero" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_tech">Technology</a>
-        <a href="#solution-showcase" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_canopy">Under-Canopy</a>
-        <a href="#problem-section" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_math">78.6% Proof</a>
-        <a href="#features-section" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_features">Features</a>
-        <a href="#dashboard-section" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_os">Agronomist OS</a>
-        <a href="#roi-section" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_roi">Economics</a>
-        <a href="#faq-section" class="px-2.5 py-1 rounded-lg hover:text-white hover:bg-white/10 transition-all whitespace-nowrap" data-i18n="nav_faq">FAQ</a>
-      </nav>
+        <!-- Action Items & Language Switcher -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <!-- Interactive Language Switcher Pill -->
+          <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-0.5 text-xs font-semibold shadow-inner">
+            <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-sans font-bold">
+              EN
+            </button>
+            <button id="lang-ar" onclick="setLanguage('ar')" class="px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-white/70 hover:text-white font-arabic">
+              عربي
+            </button>
+          </div>
 
-      <!-- Action Items & Language Switcher -->
-      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-        <!-- Interactive Language Switcher Pill -->
-        <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-0.5 fluid-micro font-semibold">
-          <button id="lang-en" onclick="setLanguage('en')" class="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-sans">
-            EN
+          <!-- Primary CTA Button (Compact & Sleek) -->
+          <button onclick="openBookingModal()" class="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold text-xs sm:text-[13px] tracking-wide transition-all shadow-sm hover:scale-105 shrink-0 whitespace-nowrap">
+            <span data-i18n="btn_demo">Book Field Demo</span>
           </button>
-          <button id="lang-ar" onclick="setLanguage('ar')" class="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-white/70 hover:text-white font-arabic">
-            عربي
+
+          <!-- Mobile Menu Toggle Button -->
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-1.5 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors" aria-label="Toggle Navigation">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
           </button>
         </div>
 
-        <!-- Minimal Responsive CTA -->
-        <button onclick="openBookingModal()" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-semibold fluid-caption tracking-wide transition-all shadow-sm shrink-0 whitespace-nowrap">
-          <span data-i18n="btn_demo">Book Field Demo</span>
-        </button>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-1.5 sm:p-2 rounded-xl bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors" aria-label="Toggle Navigation">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
       </div>
     </header>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden w-[min(96vw,1360px)] mx-auto mt-1 p-3 bg-[#05140B]/95 backdrop-blur-xl border border-white/10 rounded-2xl text-left rtl:text-right sticky top-[72px] z-30 shadow-2xl space-y-1 fluid-caption font-medium">
-      <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_tech">Technology</a>
-      <a href="#solution-showcase" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_canopy">Under-Canopy</a>
-      <a href="#problem-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_math">78.6% Proof</a>
-      <a href="#features-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_features">Features</a>
-      <a href="#dashboard-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_os">Agronomist OS</a>
-      <a href="#roi-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_roi">Economics</a>
-      <a href="#faq-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-all" data-i18n="nav_faq">FAQ</a>
+    <div id="mobile-menu" class="hidden md:hidden fixed top-16 sm:top-20 left-0 w-full bg-[#05140B]/95 backdrop-blur-2xl border-b border-white/10 p-5 z-40 shadow-2xl space-y-2 fluid-caption font-medium text-left rtl:text-right">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_tech">Technology</a>
+      <a href="#solution-showcase" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_canopy">Under-Canopy</a>
+      <a href="#problem-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_math">78.6% Proof</a>
+      <a href="#features-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_features">Features</a>
+      <a href="#dashboard-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_os">Agronomist OS</a>
+      <a href="#roi-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_roi">Economics</a>
+      <a href="#faq-section" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors" data-i18n="nav_faq">FAQ</a>
     </div>
 
     <!-- ============================================================ -->
-    <!-- 1. HERO SECTION (Fluid Typography & Fluid Proportions)       -->
+    <!-- 1. HERO SECTION (Full Screen Height, Seamlessly Integrated)  -->
     <!-- ============================================================ -->
-    <section id="hero" class="w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-8 pb-12 sm:py-14">
-      <div class="max-w-3xl mx-auto flex flex-col items-center w-full">
+    <!-- 1. HERO SECTION (Centered, Full Viewport, Shopify Precision) -->
+    <!-- ============================================================ -->
+    <section id="hero" class="w-full min-h-screen flex flex-col justify-center pt-28 sm:pt-32 pb-20 sm:pb-24 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto text-center flex flex-col items-center">
         
-        <!-- Clean Micro-Tag -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 fluid-micro text-brand-accent mb-4 sm:mb-6 font-medium">
+        <!-- Clean Micro-Tag Pill (Centered) -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 fluid-micro text-brand-accent font-medium shadow-sm backdrop-blur-md mb-5 sm:mb-6">
           <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse"></span>
           <span data-i18n="hero_pill">Autonomous Under-Canopy Spot-Spraying</span>
         </div>
 
-        <!-- Proportionate Dynamic Headline (Scaled with clamp) -->
-        <h1 class="fluid-h1 font-semibold tracking-tight text-white max-w-2xl">
+        <!-- Sleek High-Impact Headline with Generous Line-Height (Centered) -->
+        <h1 class="fluid-h1 font-bold tracking-tight text-white leading-snug sm:leading-tight max-w-4xl mx-auto mb-4 sm:mb-5">
           <span data-i18n="hero_h1_part1">Spray only the sick leaves.</span>
-          <span class="block text-brand-accent font-normal mt-1 sm:mt-2" data-i18n="hero_h1_part2">
+          <span class="block text-brand-accent font-semibold mt-1 sm:mt-2" data-i18n="hero_h1_part2">
             Save 78.6% of your chemicals.
           </span>
         </h1>
 
-        <!-- Crisp Concise Body (Scaled with clamp) -->
-        <p class="text-white/70 fluid-body max-w-lg mt-3 sm:mt-4 font-normal leading-relaxed px-2" data-i18n="hero_desc">
-          An autonomous greenhouse rover that identifies foliage disease via on-device edge vision and spot-sprays 12 mL micro-doses — 100% offline.
+        <!-- Crisp Readable Body Text with Room to Breathe (Centered) -->
+        <p class="text-white/70 fluid-body font-normal leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8">
+          <span data-i18n="hero_desc">An autonomous greenhouse rover that identifies foliage disease via on-device edge vision and spot-sprays 12 mL micro-doses — 100% offline.</span>
         </p>
 
-        <!-- Centered Responsive CTAs -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 mt-6 sm:mt-8 w-full sm:w-auto px-4">
-          <button onclick="openBookingModal()" class="w-full sm:w-auto px-7 py-3 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-semibold fluid-caption tracking-wide transition-all shadow-sm hover:scale-105" data-i18n="btn_book_demo">
+        <!-- Minimalist CTAs (Centered) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto mb-6 sm:mb-8">
+          <button onclick="openBookingModal()" class="w-full sm:w-auto px-7 py-3 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption tracking-wide transition-all shadow-lg shadow-emerald-500/20 hover:scale-[1.02]" data-i18n="btn_book_demo">
             Book Field Demo
           </button>
-          <a href="#roi-section" class="w-full sm:w-auto px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium fluid-caption border border-white/10 transition-all text-center" data-i18n="btn_calc_savings">
+          <a href="#roi-section" class="w-full sm:w-auto px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium fluid-caption border border-white/10 transition-all text-center hover:border-white/20" data-i18n="btn_calc_savings">
             Calculate Savings
           </a>
         </div>
 
-        <!-- Trust Indicators Bar -->
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-6 sm:mt-8 fluid-caption text-white/50 px-2">
+        <!-- Trust Indicators Bar with Comfortable Margins (Centered) -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 fluid-caption text-white/50 font-medium mb-10 sm:mb-12">
           <span data-i18n="metric_saved">78.6% chemical saved</span>
-          <span>•</span>
+          <span class="text-brand-emerald/70">•</span>
           <span data-i18n="metric_offline">100% offline edge AI</span>
-          <span>•</span>
+          <span class="text-brand-emerald/70">•</span>
           <span data-i18n="metric_gap">GlobalG.A.P. compliant</span>
         </div>
 
-        <!-- Centered Product / Live Vision Demo Card (Directly Below Text) -->
-        <div class="w-full max-w-2xl mt-8 sm:mt-10 rounded-2xl floating-layer p-2.5 sm:p-4 text-left rtl:text-right">
-          <div class="relative fluid-demo-viewport rounded-xl overflow-hidden bg-brand-dark flex flex-col justify-between p-3.5 sm:p-4">
-            
-            <!-- Real Greenhouse Strawberry Imagery -->
-            <img 
-              src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=1000&q=80" 
-              alt="Under Canopy Strawberry Beds" 
-              class="absolute inset-0 w-full h-full object-cover opacity-50"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-brand-dark/60"></div>
-
-            <!-- Top Telemetry Row -->
-            <div class="relative z-10 flex items-center justify-between fluid-caption">
-              <span class="px-2.5 py-1 rounded-full bg-black/60 text-white font-medium flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping"></span>
-                <span data-i18n="hero_card_telemetry">Rover 01 · Row 4 (63.2m)</span>
-              </span>
-              <span class="px-2.5 py-0.5 rounded-full bg-black/60 text-brand-accent font-medium" data-i18n="hero_card_offline">
-                Offline Mode Active
-              </span>
-            </div>
-
-            <!-- Vision Reticle (Target Inspection) -->
-            <div class="relative z-10 my-auto text-center">
-              <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto border border-red-500/90 rounded relative flex items-center justify-center">
-                <div class="w-1.5 h-1.5 rounded-full bg-red-500"></div>
-                <div class="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-white"></div>
-                <div class="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-white"></div>
-                <div class="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-white"></div>
-                <div class="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-white"></div>
-              </div>
-              <div class="mt-2 inline-block px-2 py-0.5 rounded bg-red-600/90 text-white fluid-micro font-semibold tracking-wider uppercase" data-i18n="hero_card_target">
-                Botrytis Spot Detected · 96.4%
-              </div>
-              <div class="fluid-caption text-white/80 font-medium mt-0.5 sm:mt-1" data-i18n="hero_card_action">
-                Nozzle 2 Armed: 12 mL Target Burst
-              </div>
-            </div>
-
-            <!-- Bottom Live Batch Comparison Bar -->
-            <div class="relative z-10 bg-black/75 rounded-lg p-2 sm:p-2.5 text-xs">
-              <div class="flex items-center justify-between mb-1 fluid-caption">
-                <span class="text-white/80" data-i18n="hero_card_batch_title">Batch Consumption</span>
-                <span class="text-red-400 font-bold" data-i18n="hero_card_batch_saved">-78.6% Saved</span>
-              </div>
-              <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden flex">
-                <div class="bg-brand-emerald h-full rounded-full" style="width: 21.4%"></div>
-              </div>
-              <div class="flex justify-between items-center fluid-micro text-white/50 mt-1">
-                <span class="text-brand-accent font-semibold" data-i18n="hero_card_batch_used">3.2 L Micro-Dose</span>
-                <span class="line-through" data-i18n="hero_card_batch_blanket">15.0 L Blanket</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="px-2 pt-2 pb-0.5 flex items-center justify-between fluid-micro text-white/40">
-            <span data-i18n="hero_card_engine">YOLOv11 Edge Vision</span>
-            <span data-i18n="hero_card_speed">0.4 m/s Under-Canopy</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- 2. SECTION AFTER HERO: FLUID CARD WITH MOVING CURVED STAR    -->
-    <!-- ============================================================ -->
-    <section id="solution-showcase" class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      
-      <!-- Wide Proportional Card Container -->
-      <div class="floating-wide-card rounded-2xl sm:rounded-3xl fluid-card relative overflow-hidden">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Left Column: Story, Features & Live Switcher -->
-          <div class="lg:col-span-6 space-y-4 sm:space-y-5 text-left rtl:text-right">
-            
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/10 text-brand-accent fluid-micro font-semibold uppercase tracking-wider">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span>
-              <span data-i18n="showcase_badge">Live Under-Canopy Telemetry</span>
-            </div>
-
-            <h2 class="fluid-h2 font-semibold text-white tracking-tight" data-i18n="showcase_title">
-              Precision spot-dosing beneath the foliage.
-            </h2>
-
-            <p class="text-white/70 fluid-body leading-relaxed" data-i18n="showcase_desc">
-              Watch Faddan in action: moving smoothly through commercial strawberry rows at 0.4 m/s, locking onto early-stage fungal pathology with sub-millimeter solenoid trigger timing.
-            </p>
-
-            <!-- Interactive Stage Tabs (Controls the Star Visual) -->
-            <div class="grid grid-cols-3 gap-2 pt-1 sm:pt-2">
-              <button onclick="goToSlide(0)" id="tab-btn-0" class="tab-indicator p-2.5 sm:p-3 rounded-xl bg-white/10 border border-brand-emerald/40 text-left rtl:text-right transition-all">
-                <div class="fluid-micro text-brand-accent font-semibold uppercase" data-i18n="tab1_sub">Stage 01</div>
-                <div class="fluid-caption font-bold text-white mt-0.5" data-i18n="tab1_title">Edge Scan</div>
-              </button>
-
-              <button onclick="goToSlide(1)" id="tab-btn-1" class="tab-indicator p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/5 text-left rtl:text-right hover:bg-white/10 transition-all">
-                <div class="fluid-micro text-white/50 font-semibold uppercase" data-i18n="tab2_sub">Stage 02</div>
-                <div class="fluid-caption font-bold text-white mt-0.5" data-i18n="tab2_title">AI Reticle</div>
-              </button>
-
-              <button onclick="goToSlide(2)" id="tab-btn-2" class="tab-indicator p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/5 text-left rtl:text-right hover:bg-white/10 transition-all">
-                <div class="fluid-micro text-white/50 font-semibold uppercase" data-i18n="tab3_sub">Stage 03</div>
-                <div class="fluid-caption font-bold text-white mt-0.5" data-i18n="tab3_title">Micro-Burst</div>
-              </button>
-            </div>
-
-            <!-- Telemetry Chip Details -->
-            <div class="pt-1 flex flex-wrap items-center gap-3 fluid-caption text-white/60">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span data-i18n="telemetry_active">Autonomous Scan: Row 04</span>
-              </div>
-              <span>•</span>
-              <span data-i18n="telemetry_speed">0.4 m/s Continuous Crawl</span>
-            </div>
-
-          </div>
-
-          <!-- Right Column: Curved Moving Star Visual (Fluid Size) -->
-          <div class="lg:col-span-6 flex items-center justify-center relative py-3 sm:py-4">
-            
-            <!-- Star aura and fluid star container -->
-            <div class="star-glow-aura"></div>
-            
-            <div class="star-morph-wrapper fluid-star shadow-2xl">
+        <!-- Centerpiece Live Rover Demo Card (Centered, Floating Frame) -->
+        <div class="w-full max-w-xl mx-auto">
+          <div class="w-full rounded-2xl floating-layer p-3 sm:p-4 text-left rtl:text-right border border-white/10 shadow-2xl backdrop-blur-xl">
+            <div class="relative fluid-demo-viewport rounded-xl overflow-hidden bg-[#040e07] flex flex-col justify-between p-3.5 border border-white/5">
               
-              <div class="star-morph-inner relative">
-                
-                <!-- SLIDE 1: Optical Under-Canopy Scan -->
-                <div id="slide-0" class="carousel-slide active flex flex-col justify-between p-4 sm:p-6">
-                  <img 
-                    src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=800&q=80" 
-                    alt="Canopy Rover Scan" 
-                    class="absolute inset-0 w-full h-full object-cover opacity-60"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/50"></div>
+              <!-- Real Greenhouse Strawberry Imagery -->
+              <img 
+                src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=800&q=80" 
+                alt="Under Canopy Strawberry Beds" 
+                class="absolute inset-0 w-full h-full object-cover opacity-50"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#040e07] via-[#040e07]/40 to-[#040e07]/60"></div>
 
-                  <div class="relative z-10 flex justify-between items-center fluid-micro">
-                    <span class="px-2 py-0.5 rounded-full bg-black/70 text-white font-medium">01 · Ground Scan</span>
-                    <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">100% Offline</span>
-                  </div>
+              <!-- Top Telemetry Row -->
+              <div class="relative z-10 flex items-center justify-between fluid-caption">
+                <span class="px-2.5 py-0.5 rounded-full bg-black/70 text-white font-medium flex items-center gap-1.5 border border-white/10 shadow-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping"></span>
+                  <span data-i18n="hero_card_telemetry">Rover 01 · Row 4 (63.2m)</span>
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-black/70 text-brand-accent font-semibold border border-white/10 shadow-sm" data-i18n="hero_card_offline">
+                  Offline Mode Active
+                </span>
+              </div>
 
-                  <div class="relative z-10 text-center my-auto">
-                    <div class="w-10 h-10 sm:w-14 sm:h-14 mx-auto rounded-full border-2 border-dashed border-emerald-400 flex items-center justify-center animate-spin" style="animation-duration: 12s;">
-                      <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                    </div>
-                    <div class="mt-2 sm:mt-3 fluid-caption font-semibold text-white px-2" data-i18n="slide1_caption">Scanning 12 Rows in 48 Mins</div>
-                  </div>
-
-                  <div class="relative z-10 bg-black/75 rounded-lg sm:rounded-xl p-2 text-center fluid-caption text-white/80" data-i18n="slide1_sub">
-                    Smooth ground crawler navigating underneath beds
-                  </div>
+              <!-- Vision Reticle (Target Inspection) -->
+              <div class="relative z-10 my-auto text-center py-2">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto border-2 border-red-500/90 rounded-lg relative flex items-center justify-center shadow-lg shadow-red-500/20">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                  <div class="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-white"></div>
+                  <div class="absolute -top-1 -right-1 w-2 h-2 border-t-2 border-r-2 border-white"></div>
+                  <div class="absolute -bottom-1 -left-1 w-2 h-2 border-b-2 border-l-2 border-white"></div>
+                  <div class="absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2 border-white"></div>
                 </div>
-
-                <!-- SLIDE 2: Computer Vision Pathology Detection -->
-                <div id="slide-1" class="carousel-slide flex flex-col justify-between p-4 sm:p-6">
-                  <img 
-                    src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80" 
-                    alt="AI Foliage Reticle" 
-                    class="absolute inset-0 w-full h-full object-cover opacity-50"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/60"></div>
-
-                  <div class="relative z-10 flex justify-between items-center fluid-micro">
-                    <span class="px-2 py-0.5 rounded-full bg-black/70 text-white font-medium">02 · YOLOv11 Edge</span>
-                    <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 font-bold">Locked</span>
-                  </div>
-
-                  <div class="relative z-10 text-center my-auto">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto border-2 border-red-500 rounded-lg relative flex items-center justify-center">
-                      <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                      <div class="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-white"></div>
-                      <div class="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-white"></div>
-                      <div class="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-white"></div>
-                      <div class="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-white"></div>
-                    </div>
-                    <div class="mt-2 inline-block px-2 py-0.5 rounded bg-red-600 text-white fluid-micro font-bold uppercase" data-i18n="slide2_caption">
-                      Botrytis Spot · 96.4%
-                    </div>
-                  </div>
-
-                  <div class="relative z-10 bg-black/75 rounded-lg sm:rounded-xl p-2 text-center fluid-caption text-white/80" data-i18n="slide2_sub">
-                    Isolates sick leaves without spraying healthy neighbors
-                  </div>
+                <div class="mt-2 inline-block px-2.5 py-0.5 rounded-full bg-red-600/90 text-white fluid-micro font-bold tracking-wider uppercase shadow" data-i18n="hero_card_target">
+                  Botrytis Spot Detected · 96.4%
                 </div>
-
-                <!-- SLIDE 3: 12mL Precision Micro-Burst Solenoid -->
-                <div id="slide-2" class="carousel-slide flex flex-col justify-between p-4 sm:p-6">
-                  <img 
-                    src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=800&q=80" 
-                    alt="Precision Micro-Dose" 
-                    class="absolute inset-0 w-full h-full object-cover opacity-60 filter hue-rotate-30"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/60"></div>
-
-                  <div class="relative z-10 flex justify-between items-center fluid-micro">
-                    <span class="px-2 py-0.5 rounded-full bg-black/70 text-white font-medium">03 · Solenoid</span>
-                    <span class="px-2 py-0.5 rounded-full bg-brand-emerald text-brand-dark font-bold">-78.6%</span>
-                  </div>
-
-                  <div class="relative z-10 text-center my-auto">
-                    <div class="fluid-h2 font-extrabold text-brand-accent font-sans">12 mL</div>
-                    <div class="fluid-caption text-white font-medium mt-0.5" data-i18n="slide3_caption">Surgical Micro-Dose</div>
-                    <div class="fluid-micro text-white/50">3.2 L used vs 15.0 L</div>
-                  </div>
-
-                  <div class="relative z-10 bg-black/75 rounded-lg sm:rounded-xl p-2 text-center fluid-caption text-white/80" data-i18n="slide3_sub">
-                    Hardware PHI lock prevents harvest over-spraying
-                  </div>
+                <div class="fluid-caption text-white/90 font-medium mt-1" data-i18n="hero_card_action">
+                  Nozzle 2 Armed: 12 mL Target Burst
                 </div>
+              </div>
 
+              <!-- Bottom Live Batch Comparison Bar -->
+              <div class="relative z-10 bg-black/80 backdrop-blur-md rounded-lg p-2 sm:p-2.5 border border-white/10 text-xs shadow">
+                <div class="flex items-center justify-between mb-1 fluid-caption font-medium">
+                  <span class="text-white/80" data-i18n="hero_card_batch_title">Batch Consumption</span>
+                  <span class="text-red-400 font-bold" data-i18n="hero_card_batch_saved">-78.6% Saved</span>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden flex">
+                  <div class="bg-brand-emerald h-full rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]" style="width: 21.4%"></div>
+                </div>
+                <div class="flex justify-between items-center fluid-micro text-white/60 mt-1 font-medium">
+                  <span class="text-brand-accent font-semibold" data-i18n="hero_card_batch_used">3.2 L Micro-Dose</span>
+                  <span class="line-through text-white/40" data-i18n="hero_card_batch_blanket">15.0 L Blanket</span>
+                </div>
               </div>
 
             </div>
 
-            <!-- Floating Micro Telemetry Badge -->
-            <div class="absolute -bottom-2 sm:-bottom-3 inset-x-4 sm:inset-x-auto sm:left-4 floating-wide-card px-3 py-1.5 rounded-xl shadow-xl flex items-center justify-center gap-2 fluid-caption text-white z-20">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse"></span>
-              <span class="font-semibold" data-i18n="star_float_badge">YOLOv11 Edge Target Locked</span>
+            <div class="px-2 pt-2 pb-0.5 flex items-center justify-between fluid-micro text-white/40 font-medium">
+              <span data-i18n="hero_card_engine">YOLOv11 Edge Vision</span>
+              <span data-i18n="hero_card_speed">0.4 m/s Under-Canopy</span>
             </div>
-
           </div>
-
         </div>
 
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 3. SECTION: THE PROBLEM (Floating White Layer)               -->
+    <!-- 2. SECTION: SOLUTION SHOWCASE (Full Screen Height)           -->
     <!-- ============================================================ -->
-    <section id="problem-section" class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      
-      <div class="floating-white-card rounded-2xl sm:rounded-3xl fluid-card">
+    <section id="solution-showcase" class="w-full min-h-screen flex flex-col justify-center py-16 sm:py-24 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-white/10">
         
-        <!-- Header -->
-        <div class="max-w-xl mb-8 sm:mb-10 text-left rtl:text-right">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300/80 fluid-micro font-semibold uppercase tracking-wider" data-i18n="prob_badge">The Status Quo Dilemma</span>
-          <h2 class="fluid-h2 font-bold text-slate-900 tracking-tight mt-3" data-i18n="prob_title">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Column: Story, Features & Live Switcher -->
+            <div class="md:col-span-6 space-y-4 sm:space-y-6 text-left rtl:text-right">
+              
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/15 text-brand-accent border border-brand-emerald/30 fluid-micro font-semibold uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span>
+                <span data-i18n="showcase_badge">Live Under-Canopy Telemetry</span>
+              </div>
+
+              <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="showcase_title">
+                Precision spot-dosing beneath the foliage.
+              </h2>
+
+              <p class="text-white/75 fluid-body leading-relaxed" data-i18n="showcase_desc">
+                Watch Faddan in action: moving smoothly through commercial strawberry rows at 0.4 m/s, locking onto early-stage fungal pathology with sub-millimeter solenoid trigger timing.
+              </p>
+
+              <!-- Interactive Stage Tabs -->
+              <div class="grid grid-cols-3 gap-2.5 pt-2">
+                <button onclick="goToSlide(0)" id="tab-btn-0" class="tab-indicator p-3 sm:p-3.5 rounded-xl bg-white/10 border border-brand-emerald/50 text-left rtl:text-right transition-all shadow-sm">
+                  <div class="fluid-micro text-brand-accent font-bold uppercase tracking-wider" data-i18n="tab1_sub">Stage 01</div>
+                  <div class="fluid-caption font-bold text-white mt-1" data-i18n="tab1_title">Edge Scan</div>
+                </button>
+
+                <button onclick="goToSlide(1)" id="tab-btn-1" class="tab-indicator p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10 text-left rtl:text-right hover:bg-white/10 transition-all">
+                  <div class="fluid-micro text-white/50 font-bold uppercase tracking-wider" data-i18n="tab2_sub">Stage 02</div>
+                  <div class="fluid-caption font-bold text-white mt-1" data-i18n="tab2_title">AI Reticle</div>
+                </button>
+
+                <button onclick="goToSlide(2)" id="tab-btn-2" class="tab-indicator p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10 text-left rtl:text-right hover:bg-white/10 transition-all">
+                  <div class="fluid-micro text-white/50 font-bold uppercase tracking-wider" data-i18n="tab3_sub">Stage 03</div>
+                  <div class="fluid-caption font-bold text-white mt-1" data-i18n="tab3_title">Micro-Burst</div>
+                </button>
+              </div>
+
+              <!-- Telemetry Chip Details -->
+              <div class="pt-2 flex flex-wrap items-center gap-3 fluid-caption text-white/60 font-medium">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span data-i18n="telemetry_active">Autonomous Scan: Row 04</span>
+                </div>
+                <span class="text-brand-emerald">•</span>
+                <span data-i18n="telemetry_speed">0.4 m/s Continuous Crawl</span>
+              </div>
+
+            </div>
+
+            <!-- Right Column: Curved Moving Star Visual -->
+            <div class="md:col-span-6 flex items-center justify-center relative py-4 sm:py-6">
+              
+              <div class="star-glow-aura"></div>
+              
+              <div class="star-morph-wrapper fluid-star shadow-2xl">
+                <div class="star-morph-inner relative">
+                  
+                  <!-- SLIDE 1 -->
+                  <div id="slide-0" class="carousel-slide active flex flex-col justify-between p-4 sm:p-6">
+                    <img 
+                      src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=800&q=80" 
+                      alt="Canopy Rover Scan" 
+                      class="absolute inset-0 w-full h-full object-cover opacity-60"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/50"></div>
+
+                    <div class="relative z-10 flex justify-between items-center fluid-micro">
+                      <span class="px-2.5 py-1 rounded-full bg-black/75 text-white font-medium border border-white/10">01 · Ground Scan</span>
+                      <span class="px-2.5 py-1 rounded-full bg-emerald-500/25 text-emerald-300 font-bold border border-emerald-500/30">100% Offline</span>
+                    </div>
+
+                    <div class="relative z-10 text-center my-auto">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full border-2 border-dashed border-emerald-400 flex items-center justify-center animate-spin" style="animation-duration: 12s;">
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                      </div>
+                      <div class="mt-2.5 fluid-caption font-bold text-white px-2" data-i18n="slide1_caption">Scanning 12 Rows in 48 Mins</div>
+                    </div>
+
+                    <div class="relative z-10 bg-black/80 backdrop-blur-md rounded-xl p-2.5 text-center fluid-caption text-white/90 border border-white/10" data-i18n="slide1_sub">
+                      Smooth ground crawler navigating underneath beds
+                    </div>
+                  </div>
+
+                  <!-- SLIDE 2 -->
+                  <div id="slide-1" class="carousel-slide flex flex-col justify-between p-4 sm:p-6">
+                    <img 
+                      src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80" 
+                      alt="AI Foliage Reticle" 
+                      class="absolute inset-0 w-full h-full object-cover opacity-50"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/60"></div>
+
+                    <div class="relative z-10 flex justify-between items-center fluid-micro">
+                      <span class="px-2.5 py-1 rounded-full bg-black/75 text-white font-medium border border-white/10">02 · YOLOv11 Edge</span>
+                      <span class="px-2.5 py-1 rounded-full bg-red-500/25 text-red-400 font-bold border border-red-500/30">Locked</span>
+                    </div>
+
+                    <div class="relative z-10 text-center my-auto">
+                      <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto border-2 border-red-500 rounded-xl relative flex items-center justify-center shadow-lg shadow-red-500/20">
+                        <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                        <div class="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-white"></div>
+                        <div class="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-white"></div>
+                        <div class="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-white"></div>
+                        <div class="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-white"></div>
+                      </div>
+                      <div class="mt-2 inline-block px-2.5 py-0.5 rounded-full bg-red-600 text-white fluid-micro font-bold uppercase shadow" data-i18n="slide2_caption">
+                        Botrytis Spot · 96.4%
+                      </div>
+                    </div>
+
+                    <div class="relative z-10 bg-black/80 backdrop-blur-md rounded-xl p-2.5 text-center fluid-caption text-white/90 border border-white/10" data-i18n="slide2_sub">
+                      Isolates sick leaves without spraying healthy neighbors
+                    </div>
+                  </div>
+
+                  <!-- SLIDE 3 -->
+                  <div id="slide-2" class="carousel-slide flex flex-col justify-between p-4 sm:p-6">
+                    <img 
+                      src="https://images.unsplash.com/photo-1590005354167-6da97870c757?auto=format&fit=crop&w=800&q=80" 
+                      alt="Precision Micro-Dose" 
+                      class="absolute inset-0 w-full h-full object-cover opacity-60 filter hue-rotate-30"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-brand-dark/60"></div>
+
+                    <div class="relative z-10 flex justify-between items-center fluid-micro">
+                      <span class="px-2.5 py-1 rounded-full bg-black/75 text-white font-medium border border-white/10">03 · Solenoid</span>
+                      <span class="px-2.5 py-1 rounded-full bg-brand-emerald text-brand-dark font-bold shadow">-78.6%</span>
+                    </div>
+
+                    <div class="relative z-10 text-center my-auto">
+                      <div class="fluid-h2 font-extrabold text-brand-accent font-sans">12 mL</div>
+                      <div class="fluid-caption text-white font-bold mt-1" data-i18n="slide3_caption">Surgical Micro-Dose</div>
+                      <div class="fluid-micro text-white/60 font-medium">3.2 L used vs 15.0 L</div>
+                    </div>
+
+                    <div class="relative z-10 bg-black/80 backdrop-blur-md rounded-xl p-2.5 text-center fluid-caption text-white/90 border border-white/10" data-i18n="slide3_sub">
+                      Hardware PHI lock prevents harvest over-spraying
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Floating Micro Telemetry Badge -->
+              <div class="absolute -bottom-2 sm:-bottom-3 inset-x-4 sm:inset-x-auto sm:left-6 floating-wide-card px-3.5 py-1.5 rounded-xl shadow-xl flex items-center justify-center gap-2 fluid-caption text-white z-20 border border-white/10">
+                <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
+                <span class="font-semibold" data-i18n="star_float_badge">YOLOv11 Edge Target Locked</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3. SECTION: THE PROBLEM (Full Screen Height, Unified Dark)   -->
+    <!-- ============================================================ -->
+    <section id="problem-section" class="w-full min-h-screen flex flex-col justify-center py-20 sm:py-28 relative z-10 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        
+        <!-- Header with Generous Negative Space -->
+        <div class="max-w-2xl mb-12 sm:mb-16 text-left rtl:text-right space-y-3">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 fluid-micro font-semibold uppercase tracking-wider" data-i18n="prob_badge">The Status Quo Dilemma</span>
+          <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="prob_title">
             Blanket spraying costs Egyptian farms three ways.
           </h2>
-          <p class="text-slate-600 fluid-body mt-2.5 leading-relaxed" data-i18n="prob_sub">
+          <p class="text-white/70 fluid-body leading-relaxed max-w-xl pt-1" data-i18n="prob_sub">
             Uniform greenhouse misting treats healthy plants like sick ones — wasting expensive chemicals, risking export rejections, and relying on connectivity that doesn't exist.
           </p>
         </div>
 
-        <!-- 3 Feature Columns -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left rtl:text-right">
+        <!-- 3 Feature Columns with Airy Spacing & Tamed Numbers -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 text-left rtl:text-right">
           
-          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-400 hover:shadow-md transition-all">
-            <div class="w-9 h-9 rounded-xl bg-red-100 text-red-600 font-bold text-xs flex items-center justify-center mb-3">
-              15L
+          <div class="floating-wide-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-red-500/30 transition-all flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 border border-red-500/30 font-bold text-xs flex items-center justify-center mb-4">
+                15L
+              </div>
+              <h3 class="fluid-h3 font-bold text-white mb-2 group-hover:text-red-300 transition-colors" data-i18n="p1_title">15 Liters Dumped Every Cycle</h3>
+              <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p1_desc">
+                Standard tractor misting douses all 12 rows regardless of infection. You pay for 15 L of expensive fungicide — yet over 78% lands on healthy foliage.
+              </p>
             </div>
-            <h3 class="fluid-h3 font-bold text-slate-900 mb-1.5" data-i18n="p1_title">15 Liters Dumped Every Cycle</h3>
-            <p class="fluid-caption text-slate-600 leading-relaxed" data-i18n="p1_desc">
-              Standard tractor misting douses all 12 rows regardless of infection. You pay for 15 L of expensive fungicide — yet over 78% lands on healthy foliage.
-            </p>
           </div>
 
-          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all">
-            <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 font-bold text-xs flex items-center justify-center mb-3">
-              PHI
+          <div class="floating-wide-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-amber-500/30 transition-all flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold text-xs flex items-center justify-center mb-4">
+                PHI
+              </div>
+              <h3 class="fluid-h3 font-bold text-white mb-2 group-hover:text-amber-300 transition-colors" data-i18n="p2_title">Residue Risk Blocks EU Export</h3>
+              <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p2_desc">
+                Excess chemical residue triggers Pre-Harvest Interval (PHI) violations and fails GlobalG.A.P. audits, forfeiting European export quotas.
+              </p>
             </div>
-            <h3 class="fluid-h3 font-bold text-slate-900 mb-1.5" data-i18n="p2_title">Residue Risk Blocks EU Export</h3>
-            <p class="fluid-caption text-slate-600 leading-relaxed" data-i18n="p2_desc">
-              Excess chemical residue triggers Pre-Harvest Interval (PHI) violations and fails GlobalG.A.P. audits, forfeiting European export quotas.
-            </p>
           </div>
 
-          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all">
-            <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center mb-3">
-              0-GB
+          <div class="floating-wide-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold text-xs flex items-center justify-center mb-4">
+                0-GB
+              </div>
+              <h3 class="fluid-h3 font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors" data-i18n="p3_title">Zero Farm Internet Needed</h3>
+              <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p3_desc">
+                Foreign tools assume 5G. In Ismailia and Beheira, connections drop instantly. Faddan operates 100% on local on-device hardware.
+              </p>
             </div>
-            <h3 class="fluid-h3 font-bold text-slate-900 mb-1.5" data-i18n="p3_title">Zero Farm Internet Needed</h3>
-            <p class="fluid-caption text-slate-600 leading-relaxed" data-i18n="p3_desc">
-              Foreign tools assume 5G. In Ismailia and Beheira, connections drop instantly. Faddan operates 100% on local on-device hardware.
-            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
     <!-- ============================================================ -->
-    <!-- 4. SECTION: THE NUMBERS (Impact Stat Band - Fluid Scaling)   -->
+    <!-- 4. SECTION: THE NUMBERS<!-- 4. SECTION: THE NUMBERS (Impact Stat Band - Tamed Digits)    -->
     <!-- ============================================================ -->
-    <section class="w-[min(94vw,1200px)] mx-auto py-4 sm:py-6 scroll-reveal">
-      <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-brand-emerald/20">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
-          <div class="space-y-1">
-            <div class="fluid-h1 font-extrabold text-brand-accent font-sans">78.6%</div>
-            <div class="fluid-caption text-white/70" data-i18n="stat1_lbl">Chemical saved per cycle</div>
-          </div>
-          <div class="space-y-1">
-            <div class="fluid-h1 font-extrabold text-white font-sans">3.2 L</div>
-            <div class="fluid-caption text-white/70" data-i18n="stat2_lbl">Replaces 15.0L blanket dose</div>
-          </div>
-          <div class="space-y-1">
-            <div class="fluid-h1 font-extrabold text-white font-sans">48 min</div>
-            <div class="fluid-caption text-white/70" data-i18n="stat3_lbl">Full 12 rows scan</div>
-          </div>
-          <div class="space-y-1">
-            <div class="fluid-h1 font-extrabold text-brand-emerald font-sans">100%</div>
-            <div class="fluid-caption text-white/70" data-i18n="stat4_lbl">Offline reliability</div>
+    <section class="w-full py-16 sm:py-20 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-brand-emerald/30 bg-gradient-to-r from-[#071F11]/90 via-[#0C2A18]/90 to-[#071F11]/90 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            
+            <div class="space-y-1.5">
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-accent font-sans tracking-tight">78.6%</div>
+              <div class="fluid-caption text-white/80 font-medium" data-i18n="stat1_lbl">Chemical saved per cycle</div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-sans tracking-tight">3.2 L</div>
+              <div class="fluid-caption text-white/80 font-medium" data-i18n="stat2_lbl">Replaces 15.0L blanket dose</div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-sans tracking-tight">48 min</div>
+              <div class="fluid-caption text-white/80 font-medium" data-i18n="stat3_lbl">Full 12 rows scan</div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-emerald font-sans tracking-tight">100%</div>
+              <div class="fluid-caption text-white/80 font-medium" data-i18n="stat4_lbl">Offline reliability</div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 5. SECTION: PRODUCT FEATURES (Floating White Layer)          -->
+    <!-- 5. SECTION: FEATURES (Full Screen Height, Unified Dark)      -->
     <!-- ============================================================ -->
-    <section id="features-section" class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      
-      <div class="floating-white-card rounded-2xl sm:rounded-3xl fluid-card space-y-8 sm:space-y-10">
+    <section id="features-section" class="w-full min-h-screen flex flex-col justify-center py-20 sm:py-28 relative z-10 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto space-y-10 sm:space-y-14">
         
         <!-- Header -->
-        <div class="text-left rtl:text-right max-w-xl">
-          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300/80 fluid-micro font-semibold uppercase tracking-wider" data-i18n="feat_badge">Engineered for Greenhouses</span>
-          <h2 class="fluid-h2 font-bold text-slate-900 tracking-tight mt-2.5" data-i18n="feat_title">
+        <div class="text-left rtl:text-right max-w-2xl space-y-2.5">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 fluid-micro font-semibold uppercase tracking-wider" data-i18n="feat_badge">Engineered for Greenhouses</span>
+          <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="feat_title">
             Three systems working in unison under the canopy.
           </h2>
         </div>
 
         <!-- Feature 1: Agronomist Supercharged -->
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 pt-2 border-t border-slate-200/80">
-          <div class="w-full md:w-1/2 space-y-2.5 sm:space-y-3 text-left rtl:text-right">
-            <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">01</div>
-            <h3 class="fluid-h3 font-bold text-slate-900" data-i18n="f1_title">Your Agronomist, Supercharged</h3>
-            <p class="fluid-body text-slate-600 leading-relaxed" data-i18n="f1_desc">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/10 hover:border-brand-emerald/30 transition-all flex flex-col md:flex-row items-center gap-8 lg:gap-12">
+          <div class="w-full md:w-1/2 space-y-3 sm:space-y-4 text-left rtl:text-right">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold text-xs flex items-center justify-center">01</div>
+            <h3 class="fluid-h3 font-bold text-white" data-i18n="f1_title">Your Agronomist, Supercharged</h3>
+            <p class="fluid-body text-white/70 leading-relaxed" data-i18n="f1_desc">
               Every detection arrives with a labeled snapshot, confidence score, and exact row-and-meter coordinate. Agronomists approve or correct each pinpoint from their phone — retraining edge models automatically.
             </p>
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3 fluid-caption text-emerald-700 font-medium pt-1">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 fluid-caption text-emerald-400 font-semibold pt-1">
               <span>✓ Bilingual Dashboard</span>
               <span>✓ One-Tap Verification</span>
               <span>✓ Continuous Learning</span>
             </div>
           </div>
-          <div class="w-full md:w-1/2 bg-slate-100/90 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-slate-200 text-slate-800 flex flex-col gap-2.5 fluid-caption shadow-inner">
-            <div class="flex justify-between items-center text-slate-600 pb-2 border-b border-slate-200">
-              <span class="font-bold text-slate-900">Detection Queue · Row 4</span>
-              <span class="bg-red-100 text-red-700 font-semibold px-2 py-0.5 rounded fluid-micro">High Priority</span>
+          <div class="w-full md:w-1/2 bg-black/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-white/10 text-white flex flex-col gap-3 fluid-caption backdrop-blur-md shadow-inner">
+            <div class="flex justify-between items-center text-white/70 pb-2 border-b border-white/10">
+              <span class="font-bold text-white">Detection Queue · Row 4</span>
+              <span class="bg-red-500/20 text-red-400 border border-red-500/30 font-semibold px-2 py-0.5 rounded fluid-micro">High Priority</span>
             </div>
-            <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm gap-2">
+            <div class="flex items-center justify-between bg-white/[0.04] p-3 rounded-xl border border-white/10 shadow-sm gap-2">
               <div>
-                <div class="font-semibold text-slate-900">Powdery Mildew at 42.8m</div>
-                <div class="fluid-micro text-slate-500">Confidence: 94.2% · #084</div>
+                <div class="font-semibold text-white">Powdery Mildew at 42.8m</div>
+                <div class="fluid-micro text-white/50">Confidence: 94.2% · #084</div>
               </div>
-              <button class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold fluid-micro shrink-0 transition-colors">Approved</button>
+              <button class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 rounded-lg font-semibold fluid-micro shrink-0 transition-colors">Approved</button>
             </div>
-            <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm gap-2">
+            <div class="flex items-center justify-between bg-white/[0.04] p-3 rounded-xl border border-white/10 shadow-sm gap-2">
               <div>
-                <div class="font-semibold text-slate-900">Botrytis Gray Mold at 63.2m</div>
-                <div class="fluid-micro text-slate-500">Confidence: 96.4% · #085</div>
+                <div class="font-semibold text-white">Botrytis Gray Mold at 63.2m</div>
+                <div class="fluid-micro text-white/50">Confidence: 96.4% · #085</div>
               </div>
-              <button class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold fluid-micro shrink-0 transition-colors">Approved</button>
+              <button class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 rounded-lg font-semibold fluid-micro shrink-0 transition-colors">Approved</button>
             </div>
           </div>
         </div>
 
         <!-- Feature 2: Spot-Spray Down to a Single Leaf -->
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 pt-6 border-t border-slate-200/80">
-          <div class="w-full md:w-1/2 order-2 md:order-1 bg-slate-100/90 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-slate-200 text-slate-800 fluid-caption space-y-2.5 sm:space-y-3 shadow-inner">
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-slate-900">Dual Solenoid Telemetry</span>
-              <span class="text-emerald-700 font-semibold fluid-micro">Sub-mm Pulse</span>
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/10 hover:border-brand-emerald/30 transition-all flex flex-col md:flex-row items-center gap-8 lg:gap-12">
+          <div class="w-full md:w-1/2 order-2 md:order-1 bg-black/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-white/10 text-white fluid-caption space-y-3 backdrop-blur-md shadow-inner">
+            <div class="flex justify-between items-center pb-2 border-b border-white/10">
+              <span class="font-bold text-white">Dual Solenoid Telemetry</span>
+              <span class="text-brand-accent font-semibold fluid-micro">Sub-mm Pulse</span>
             </div>
-            <div class="grid grid-cols-2 gap-2 text-center">
-              <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-sm">
-                <div class="text-slate-500 fluid-micro font-medium">NOZZLE 01 (L)</div>
-                <div class="fluid-h3 font-extrabold text-slate-900 mt-0.5 sm:mt-1">11.8 mL / burst</div>
-                <div class="fluid-micro text-emerald-600 font-bold">Armed</div>
+            <div class="grid grid-cols-2 gap-3 text-center">
+              <div class="bg-white/[0.04] p-3 sm:p-4 rounded-xl border border-white/10 shadow-sm">
+                <div class="text-white/50 fluid-micro font-medium">NOZZLE 01 (L)</div>
+                <div class="text-lg sm:text-xl font-extrabold text-white mt-0.5">11.8 mL / burst</div>
+                <div class="fluid-micro text-brand-accent font-bold mt-0.5">Armed</div>
               </div>
-              <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-sm">
-                <div class="text-slate-500 fluid-micro font-medium">NOZZLE 02 (R)</div>
-                <div class="fluid-h3 font-extrabold text-slate-900 mt-0.5 sm:mt-1">12.2 mL / burst</div>
-                <div class="fluid-micro text-emerald-600 font-bold">Armed</div>
+              <div class="bg-white/[0.04] p-3 sm:p-4 rounded-xl border border-white/10 shadow-sm">
+                <div class="text-white/50 fluid-micro font-medium">NOZZLE 02 (R)</div>
+                <div class="text-lg sm:text-xl font-extrabold text-white mt-0.5">12.2 mL / burst</div>
+                <div class="fluid-micro text-brand-accent font-bold mt-0.5">Armed</div>
               </div>
             </div>
-            <div class="fluid-micro text-slate-500 text-center">
+            <div class="fluid-micro text-white/50 text-center font-medium">
               Target verified by under-canopy optical feedback before solenoid actuation.
             </div>
           </div>
-          <div class="w-full md:w-1/2 order-1 md:order-2 space-y-2.5 sm:space-y-3 text-left rtl:text-right">
-            <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">02</div>
-            <h3 class="fluid-h3 font-bold text-slate-900" data-i18n="f2_title">Spot-Spray Down to a Single Leaf</h3>
-            <p class="fluid-body text-slate-600 leading-relaxed" data-i18n="f2_desc">
+          <div class="w-full md:w-1/2 order-1 md:order-2 space-y-3 sm:space-y-4 text-left rtl:text-right">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold text-xs flex items-center justify-center">02</div>
+            <h3 class="fluid-h3 font-bold text-white" data-i18n="f2_title">Spot-Spray Down to a Single Leaf</h3>
+            <p class="fluid-body text-white/70 leading-relaxed" data-i18n="f2_desc">
               Faddan doesn’t spray entire beds. It targets leaves. A 12 mL average micro-dose lands strictly on confirmed Botrytis, Powdery Mildew, or Spider Mite hotspots.
             </p>
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3 fluid-caption text-emerald-700 font-medium pt-1">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 fluid-caption text-emerald-400 font-semibold pt-1">
               <span>✓ 10–22 mL Micro-burst</span>
               <span>✓ Optical Verification</span>
               <span>✓ 21 Pinpoints Handled/Scan</span>
@@ -842,203 +845,199 @@
         </div>
 
         <!-- Feature 3: Harvest-Safe by Design -->
-        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 pt-6 border-t border-slate-200/80">
-          <div class="w-full md:w-1/2 space-y-2.5 sm:space-y-3 text-left rtl:text-right">
-            <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">03</div>
-            <h3 class="fluid-h3 font-bold text-slate-900" data-i18n="f3_title">Harvest-Safe by Design</h3>
-            <p class="fluid-body text-slate-600 leading-relaxed" data-i18n="f3_desc">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/10 hover:border-brand-emerald/30 transition-all flex flex-col md:flex-row items-center gap-8 lg:gap-12">
+          <div class="w-full md:w-1/2 space-y-3 sm:space-y-4 text-left rtl:text-right">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold text-xs flex items-center justify-center">03</div>
+            <h3 class="fluid-h3 font-bold text-white" data-i18n="f3_title">Harvest-Safe by Design</h3>
+            <p class="fluid-body text-white/70 leading-relaxed" data-i18n="f3_desc">
               Rows within 3 days of harvest are automatically hardware-locked against spraying. PHI compliance isn't a post-harvest report — it is physically enforced by the machine.
             </p>
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3 fluid-caption text-emerald-700 font-medium pt-1">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 fluid-caption text-emerald-400 font-semibold pt-1">
               <span>✓ Automatic PHI Hardware Lock</span>
               <span>✓ Audit Trail Timestamped</span>
               <span>✓ Export Zero-Residue Grade</span>
             </div>
           </div>
-          <div class="w-full md:w-1/2 bg-slate-100/90 rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-slate-200 text-slate-800 flex flex-col gap-2.5 fluid-caption shadow-inner">
-            <div class="flex justify-between items-center text-slate-600 pb-2 border-b border-slate-200">
-              <span class="font-bold text-slate-900">Harvest Safety (PHI Enforcement)</span>
-              <span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded fluid-micro">Compliant</span>
+          <div class="w-full md:w-1/2 bg-black/40 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 text-white flex flex-col gap-3 fluid-caption backdrop-blur-md shadow-inner">
+            <div class="flex justify-between items-center text-white/70 pb-2 border-b border-white/10">
+              <span class="font-bold text-white">Harvest Safety (PHI Enforcement)</span>
+              <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold px-2 py-0.5 rounded fluid-micro">Compliant</span>
             </div>
-            <div class="p-2.5 sm:p-3 bg-white rounded-xl border border-amber-200 shadow-sm flex items-center justify-between gap-2">
+            <div class="p-3 bg-white/[0.04] rounded-xl border border-amber-500/30 shadow-sm flex items-center justify-between gap-2">
               <div>
-                <div class="font-semibold text-slate-900">Row 11 & 12 (Harvest in 48h)</div>
-                <div class="fluid-micro text-slate-500">Spray Solenoids Locked • Visual Scan Only</div>
+                <div class="font-semibold text-white">Row 11 & 12 (Harvest in 48h)</div>
+                <div class="fluid-micro text-white/50">Spray Solenoids Locked • Visual Scan Only</div>
               </div>
-              <span class="text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded font-bold fluid-micro shrink-0">LOCKED</span>
+              <span class="text-amber-400 bg-amber-500/20 border border-amber-500/30 px-2 py-0.5 rounded font-bold fluid-micro shrink-0">LOCKED</span>
             </div>
-            <div class="p-2.5 sm:p-3 bg-white rounded-xl border border-emerald-200 shadow-sm flex items-center justify-between gap-2">
+            <div class="p-3 bg-white/[0.04] rounded-xl border border-emerald-500/30 shadow-sm flex items-center justify-between gap-2">
               <div>
-                <div class="font-semibold text-slate-900">Row 01 - 10 (Harvest in 12 days)</div>
-                <div class="fluid-micro text-slate-500">Spot Spray Armed • PHI Compliant</div>
+                <div class="font-semibold text-white">Row 01 - 10 (Harvest in 12 days)</div>
+                <div class="fluid-micro text-white/50">Spot Spray Armed • PHI Compliant</div>
               </div>
-              <span class="text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-bold fluid-micro shrink-0">ACTIVE</span>
+              <span class="text-brand-accent bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded font-bold fluid-micro shrink-0">ACTIVE</span>
             </div>
           </div>
         </div>
 
       </div>
-
     </section>
 
     <!-- ============================================================ -->
-    <!-- 6. SECTION: AGRONOMIST OS DASHBOARD (Fluid Scaling)          -->
+    <!-- 6. SECTION: AGRONOMIST OS DASHBOARD<!-- 6. SECTION: AGRONOMIST OS DASHBOARD (Full Screen Height)     -->
     <!-- ============================================================ -->
-    <section id="dashboard-section" class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      <div class="floating-wide-card rounded-2xl sm:rounded-3xl fluid-card text-center">
+    <section id="dashboard-section" class="w-full min-h-screen flex flex-col justify-center py-16 sm:py-24 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center border border-white/10 backdrop-blur-xl">
         
-        <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="dash_badge">Bilingual Agronomist OS</span>
-        <h2 class="fluid-h2 font-semibold text-white tracking-tight mt-1" data-i18n="dash_title">
-          Every leaf, mapped to the meter.
-        </h2>
-        <p class="text-white/60 fluid-body max-w-xl mx-auto mt-2 leading-relaxed" data-i18n="dash_desc">
-          Row 4, 63.2m — that’s not an abstract data point, that’s one leaf. The dashboard shows each detection, each spray, and greenhouse microclimate on one screen.
-        </p>
+          <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="dash_badge">Bilingual Agronomist OS</span>
+          <h2 class="fluid-h2 font-bold text-white tracking-tight mt-1.5" data-i18n="dash_title">
+            Every leaf, mapped to the meter.
+          </h2>
+          <p class="text-white/70 fluid-body max-w-xl mx-auto mt-2 leading-relaxed" data-i18n="dash_desc">
+            Row 4, 63.2m — that’s not an abstract data point, that’s one leaf. The dashboard shows each detection, each spray, and greenhouse microclimate on one screen.
+          </p>
 
-        <!-- Simulated Responsive Tablet Frame -->
-        <div class="mt-6 sm:mt-8 max-w-4xl mx-auto bg-black/60 rounded-2xl sm:rounded-3xl p-3 sm:p-6 border border-white/10 shadow-2xl text-left rtl:text-right">
-          
-          <!-- Tablet Header -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 border-b border-white/10 fluid-caption gap-2">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald shrink-0"></span>
-              <span class="font-bold text-white">Station #1</span>
-              <span class="text-white/40">·</span>
-              <span class="text-white/60 truncate">Greenhouse #1 (12 Rows × 100m)</span>
-            </div>
-            <div class="flex items-center gap-2 fluid-micro">
-              <span class="px-2 py-0.5 rounded-full bg-white/5 text-emerald-400 font-medium">Local AP</span>
-              <span class="px-2 py-0.5 rounded-full bg-white/5 text-white/70">Daylight Mode</span>
-            </div>
-          </div>
-
-          <!-- 12-Row Heatmap Matrix Simulation -->
-          <div class="py-4 sm:py-5 space-y-2 overflow-x-auto">
-            <div class="fluid-micro font-semibold text-white/50 flex justify-between min-w-[280px]">
-              <span>CANOPY SCAN MAP (0m → 100m)</span>
-              <span>12 ROWS</span>
-            </div>
+          <!-- Simulated Responsive Tablet Frame -->
+          <div class="mt-8 sm:mt-10 max-w-4xl mx-auto bg-[#030d07] rounded-2xl p-4 sm:p-7 border border-white/15 shadow-2xl text-left rtl:text-right">
             
-            <div class="space-y-1.5 font-mono text-[9px] sm:text-[10px] min-w-[280px]">
-              <div class="flex items-center gap-2">
-                <span class="w-10 text-white/40 shrink-0">Row 01</span>
-                <div class="flex-1 h-2.5 sm:h-3 rounded bg-white/5 flex overflow-hidden">
-                  <div class="w-[60%] bg-emerald-500/30"></div>
-                  <div class="w-[3%] bg-red-500" title="Botrytis at 63.2m"></div>
-                  <div class="w-[37%] bg-emerald-500/30"></div>
-                </div>
+            <!-- Tablet Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 sm:pb-4 border-b border-white/10 fluid-caption gap-2.5">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald shrink-0"></span>
+                <span class="font-bold text-white">Station #1</span>
+                <span class="text-white/40">·</span>
+                <span class="text-white/70 truncate">Greenhouse #1 (12 Rows × 100m)</span>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="w-10 text-white/40 shrink-0">Row 02</span>
-                <div class="flex-1 h-2.5 sm:h-3 rounded bg-white/5 flex overflow-hidden">
-                  <div class="w-[30%] bg-emerald-500/30"></div>
-                  <div class="w-[2%] bg-amber-400" title="Powdery Mildew at 32m"></div>
-                  <div class="w-[68%] bg-emerald-500/30"></div>
-                </div>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-10 text-emerald-400 font-bold shrink-0">Row 04</span>
-                <div class="flex-1 h-2.5 sm:h-3 rounded bg-white/10 flex overflow-hidden border border-emerald-400/40">
-                  <div class="w-[63%] bg-emerald-500/40"></div>
-                  <div class="w-[4%] bg-red-500 animate-pulse" title="Rover Active Target"></div>
-                  <div class="w-[33%] bg-black/40"></div>
-                </div>
-                <span class="text-emerald-400 font-bold text-[8px] sm:text-[9px] shrink-0">Rover</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-10 text-white/40 shrink-0">Row 12</span>
-                <div class="flex-1 h-2.5 sm:h-3 rounded bg-white/5 flex overflow-hidden">
-                  <div class="w-full bg-amber-500/20" title="Harvest Safe Locked"></div>
-                </div>
-                <span class="text-amber-400 text-[8px] sm:text-[9px] shrink-0">PHI Lock</span>
+              <div class="flex items-center gap-2 fluid-micro">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-brand-accent font-semibold border border-emerald-500/30">Local AP</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white/80">Daylight Mode</span>
               </div>
             </div>
-          </div>
 
-          <!-- Microclimate Telemetry Bar -->
-          <div class="pt-3 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
-            <div class="bg-white/5 p-2 rounded-lg">
-              <div class="fluid-micro text-white/50">CANOPY TEMP</div>
-              <div class="font-bold text-white fluid-body mt-0.5">24.2 °C</div>
+            <!-- 12-Row Heatmap Matrix Simulation -->
+            <div class="py-4 sm:py-6 space-y-2.5 overflow-x-auto custom-scrollbar">
+              <div class="fluid-micro font-semibold text-white/60 flex justify-between min-w-[320px]">
+                <span>CANOPY SCAN MAP (0m → 100m)</span>
+                <span>12 ROWS</span>
+              </div>
+              
+              <div class="space-y-2 font-mono text-[10px] sm:text-[11px] min-w-[320px]">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-12 text-white/50 shrink-0 font-sans">Row 01</span>
+                  <div class="flex-1 h-3 rounded-lg bg-white/5 flex overflow-hidden border border-white/5">
+                    <div class="w-[60%] bg-emerald-500/30"></div>
+                    <div class="w-[3%] bg-red-500 shadow-sm" title="Botrytis at 63.2m"></div>
+                    <div class="w-[37%] bg-emerald-500/30"></div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="w-12 text-white/50 shrink-0 font-sans">Row 02</span>
+                  <div class="flex-1 h-3 rounded-lg bg-white/5 flex overflow-hidden border border-white/5">
+                    <div class="w-[30%] bg-emerald-500/30"></div>
+                    <div class="w-[2%] bg-amber-400 shadow-sm" title="Powdery Mildew at 32m"></div>
+                    <div class="w-[68%] bg-emerald-500/30"></div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="w-12 text-brand-accent font-bold shrink-0 font-sans">Row 04</span>
+                  <div class="flex-1 h-3 rounded-lg bg-white/10 flex overflow-hidden border border-emerald-400/50">
+                    <div class="w-[63%] bg-emerald-500/40"></div>
+                    <div class="w-[4%] bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" title="Rover Active Target"></div>
+                    <div class="w-[33%] bg-black/40"></div>
+                  </div>
+                  <span class="text-brand-accent font-bold text-[9px] sm:text-[10px] shrink-0 font-sans">Rover</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span class="w-12 text-white/50 shrink-0 font-sans">Row 12</span>
+                  <div class="flex-1 h-3 rounded-lg bg-white/5 flex overflow-hidden border border-white/5">
+                    <div class="w-full bg-amber-500/25" title="Harvest Safe Locked"></div>
+                  </div>
+                  <span class="text-amber-400 text-[9px] sm:text-[10px] shrink-0 font-sans">PHI Lock</span>
+                </div>
+              </div>
             </div>
-            <div class="bg-white/5 p-2 rounded-lg">
-              <div class="fluid-micro text-white/50">REL. HUMIDITY</div>
-              <div class="font-bold text-white fluid-body mt-0.5">64.8 %</div>
+
+            <!-- Microclimate Telemetry Bar -->
+            <div class="pt-3.5 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+              <div class="bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                <div class="fluid-micro text-white/50">CANOPY TEMP</div>
+                <div class="font-bold text-white fluid-body mt-0.5">24.2 °C</div>
+              </div>
+              <div class="bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                <div class="fluid-micro text-white/50">REL. HUMIDITY</div>
+                <div class="font-bold text-white fluid-body mt-0.5">64.8 %</div>
+              </div>
+              <div class="bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                <div class="fluid-micro text-white/50">ROVER BATTERY</div>
+                <div class="font-bold text-brand-accent fluid-body mt-0.5">88 % LiFePO4</div>
+              </div>
+              <div class="bg-white/5 border border-white/5 p-2.5 rounded-xl">
+                <div class="fluid-micro text-white/50">EST. YIELD</div>
+                <div class="font-bold text-white fluid-body mt-0.5">3,850 kg</div>
+              </div>
             </div>
-            <div class="bg-white/5 p-2 rounded-lg">
-              <div class="fluid-micro text-white/50">ROVER BATTERY</div>
-              <div class="font-bold text-emerald-400 fluid-body mt-0.5">88 % LiFePO4</div>
-            </div>
-            <div class="bg-white/5 p-2 rounded-lg">
-              <div class="fluid-micro text-white/50">EST. YIELD</div>
-              <div class="font-bold text-white fluid-body mt-0.5">3,850 kg</div>
-            </div>
+
           </div>
 
         </div>
-
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 7. SECTION: INTERACTIVE ROI CALCULATOR (Floating White Layer)-->
+    <!-- 7. SECTION: ROI CALCULATOR (Full Screen Height, Unified Dark)-->
     <!-- ============================================================ -->
-    <section id="roi-section" class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      
-      <div class="floating-white-card rounded-2xl sm:rounded-3xl fluid-card">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+    <section id="roi-section" class="w-full min-h-screen flex flex-col justify-center py-20 sm:py-28 relative z-10 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center">
           
-          <div class="lg:col-span-5 space-y-2.5 sm:space-y-3 text-left rtl:text-right">
-            <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300/80 fluid-micro font-semibold uppercase tracking-wider" data-i18n="roi_badge">Field Economics</span>
-            <h3 class="fluid-h2 font-bold text-slate-900 tracking-tight mt-2.5" data-i18n="roi_title">
-              What does 78.6% chemical savings mean for your farm?
-            </h3>
-            <p class="fluid-body text-slate-600 leading-relaxed" data-i18n="roi_sub">
-              Traditional misting consumes 15.0 L per cycle. Faddan delivers 3.2 L spot-doses. Adjust the sliders to see your projected season cash savings.
+          <div class="md:col-span-5 space-y-4 text-left rtl:text-right">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 fluid-micro font-semibold uppercase tracking-wider" data-i18n="roi_badge">Economic Defense</span>
+            <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="roi_title">
+              Calculate your farm’s seasonal chemical savings.
+            </h2>
+            <p class="text-white/70 fluid-body leading-relaxed max-w-md pt-1" data-i18n="roi_sub">
+              Drag your greenhouse count, spray cycles, and chemical cost to view projected EGP savings from Day 1 of deployment.
             </p>
-            <div class="pt-1 flex flex-wrap items-center gap-3 fluid-micro text-slate-500 font-medium">
-              <span>✓ Verified in Egyptian trials</span>
-              <span>✓ 12-Row Standard Model</span>
-            </div>
           </div>
 
-          <div class="lg:col-span-7 space-y-4 sm:space-y-5 bg-slate-100/90 p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-inner">
+          <div class="md:col-span-7 floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 space-y-6 border border-brand-emerald/30 bg-gradient-to-br from-[#071F11]/90 via-[#0C2A18]/90 to-[#071F11]/90 backdrop-blur-xl shadow-2xl">
             
             <!-- Slider 1 -->
             <div>
-              <div class="flex justify-between fluid-caption font-semibold mb-1.5 text-slate-700">
+              <div class="flex justify-between fluid-caption font-semibold mb-2 text-white/80">
                 <span data-i18n="roi_gh_label">Number of Greenhouses</span>
-                <span id="gh-label" class="text-emerald-700 font-bold">1 Greenhouse</span>
+                <span id="gh-label" class="text-brand-accent font-bold">1 Greenhouse</span>
               </div>
-              <input id="gh-slider" type="range" min="1" max="20" value="1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
+              <input id="gh-slider" type="range" min="1" max="20" value="1" class="w-full h-2.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
             </div>
 
             <!-- Slider 2 -->
             <div>
-              <div class="flex justify-between fluid-caption font-semibold mb-1.5 text-slate-700">
+              <div class="flex justify-between fluid-caption font-semibold mb-2 text-white/80">
                 <span data-i18n="roi_sprays_label">Sprays Per Season</span>
-                <span id="sprays-label" class="text-emerald-700 font-bold">18 Cycles</span>
+                <span id="sprays-label" class="text-brand-accent font-bold">18 Cycles</span>
               </div>
-              <input id="sprays-slider" type="range" min="6" max="30" value="18" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
+              <input id="sprays-slider" type="range" min="6" max="30" value="18" class="w-full h-2.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
             </div>
 
             <!-- Slider 3 -->
             <div>
-              <div class="flex justify-between fluid-caption font-semibold mb-1.5 text-slate-700">
+              <div class="flex justify-between fluid-caption font-semibold mb-2 text-white/80">
                 <span data-i18n="roi_cost_label">Chemical Cost (EGP / Liter)</span>
-                <span id="cost-label" class="text-emerald-700 font-bold">1,850 EGP</span>
+                <span id="cost-label" class="text-brand-accent font-bold">1,850 EGP</span>
               </div>
-              <input id="cost-slider" type="range" min="800" max="3500" step="50" value="1850" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" />
+              <input id="cost-slider" type="range" min="800" max="3500" step="50" value="1850" class="w-full h-2.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
             </div>
 
             <!-- Live Output Card -->
-            <div class="bg-white rounded-xl p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-200 shadow-md">
+            <div class="bg-black/40 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-emerald-500/30 backdrop-blur-md shadow-inner">
               <div class="text-left rtl:text-right">
-                <div class="fluid-micro text-slate-500 uppercase font-semibold" data-i18n="roi_savings_label">Projected Seasonal Savings</div>
-                <div id="egp-val" class="fluid-h2 font-extrabold text-emerald-700 mt-0.5">42,482 EGP</div>
-                <div id="liters-val" class="fluid-caption text-slate-600 font-medium">212.4 Liters conserved</div>
+                <div class="fluid-micro text-white/50 uppercase font-semibold" data-i18n="roi_savings_label">Projected Seasonal Savings</div>
+                <div id="egp-val" class="text-2xl sm:text-3xl font-extrabold text-brand-accent mt-0.5 tracking-tight">42,482 EGP</div>
+                <div id="liters-val" class="fluid-caption text-white/70 font-medium mt-0.5">212.4 Liters conserved</div>
               </div>
-              <button onclick="openBookingModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white fluid-caption font-bold transition-all shadow-md shrink-0 text-center" data-i18n="roi_btn_lock">
+              <button onclick="openBookingModal()" class="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark fluid-caption font-bold tracking-wide transition-all shadow-md shrink-0 text-center hover:scale-[1.02]" data-i18n="roi_btn_lock">
                 Book Pilot Demo →
               </button>
             </div>
@@ -1047,223 +1046,230 @@
 
         </div>
       </div>
-
     </section>
 
     <!-- ============================================================ -->
-    <!-- 8. SECTION: WHO IT'S FOR (4 Personas)                        -->
+    <!-- 8. SECTION: WHO IT'S FOR<!-- 8. SECTION: WHO IT'S FOR (Full Screen Height, Dark Glass)     -->
     <!-- ============================================================ -->
-    <section class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      <div class="text-left rtl:text-right max-w-xl mb-6 sm:mb-8">
-        <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="who_badge">Operational Roles</span>
-        <h2 class="fluid-h2 font-semibold text-white tracking-tight mt-1" data-i18n="who_title">
-          One machine. Four people breathe easier.
-        </h2>
-      </div>
+    <section class="w-full min-h-screen flex flex-col justify-center py-16 sm:py-24 scroll-reveal">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        <div class="text-left rtl:text-right max-w-xl mb-10 space-y-2">
+          <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="who_badge">Operational Roles</span>
+          <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="who_title">
+            One machine. Four people breathe easier.
+          </h2>
+        </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 text-left rtl:text-right">
-        <div class="floating-wide-card p-4 sm:p-6 rounded-2xl space-y-1.5">
-          <div class="text-brand-emerald font-bold fluid-h3" data-i18n="p1_role">Farm Owner</div>
-          <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p1_roledesc">
-            See EGP chemical savings, season yield projections, and export readiness on one single screen.
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 text-left rtl:text-right">
+          <div class="floating-wide-card p-5 sm:p-7 rounded-2xl space-y-2 border border-white/10 hover:border-brand-emerald/30 transition-all group">
+            <div class="text-brand-accent font-bold fluid-h3 group-hover:text-white transition-colors" data-i18n="p1_role">Farm Owner</div>
+            <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p1_roledesc">
+              See EGP chemical savings, season yield projections, and export readiness on one single screen.
+            </p>
+          </div>
+          <div class="floating-wide-card p-5 sm:p-7 rounded-2xl space-y-2 border border-white/10 hover:border-brand-emerald/30 transition-all group">
+            <div class="text-brand-accent font-bold fluid-h3 group-hover:text-white transition-colors" data-i18n="p2_role">Agronomist</div>
+            <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p2_roledesc">
+              Verify AI diagnoses from your phone and turn every field correction into model retraining data.
+            </p>
+          </div>
+          <div class="floating-wide-card p-5 sm:p-7 rounded-2xl space-y-2 border border-white/10 hover:border-brand-emerald/30 transition-all group">
+            <div class="text-brand-accent font-bold fluid-h3 group-hover:text-white transition-colors" data-i18n="p3_role">Rover Operator</div>
+            <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p3_roledesc">
+              Start, pause, and recall the rover with three big buttons — even while wearing thick field gloves.
+            </p>
+          </div>
+          <div class="floating-wide-card p-5 sm:p-7 rounded-2xl space-y-2 border border-white/10 hover:border-brand-emerald/30 transition-all group">
+            <div class="text-brand-accent font-bold fluid-h3 group-hover:text-white transition-colors" data-i18n="p4_role">Farm Manager</div>
+            <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p4_roledesc">
+              Plan harvest around automatic PHI hardware locks and know every row is GlobalG.A.P. compliant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 9. SECTION: PILOT PROGRAM (Full Screen Height, Unified Dark) -->
+    <!-- ============================================================ -->
+    <section class="w-full min-h-screen flex flex-col justify-center py-20 sm:py-28 relative z-10 scroll-reveal">
+      <div class="max-w-4xl mx-auto px-5 sm:px-6 w-full my-auto">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-center space-y-5 border border-brand-emerald/30 bg-gradient-to-br from-[#071F11]/90 via-[#0C2A18]/90 to-[#071F11]/90 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 fluid-micro font-semibold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span data-i18n="pilot_badge">Pilot Program · Season 2026/2027</span>
+          </div>
+          <h3 class="fluid-h2 font-bold text-white tracking-tight max-w-2xl mx-auto" data-i18n="pilot_title">
+            Now Accepting 3 Commercial Greenhouses in Egypt
+          </h3>
+          <p class="text-white/75 fluid-body max-w-xl mx-auto leading-relaxed px-2" data-i18n="pilot_desc">
+            We bring the rover to your greenhouse in Ismailia, Sharqia, or Beheira for a live demonstration scan — zero obligation, zero internet required.
           </p>
-        </div>
-        <div class="floating-wide-card p-4 sm:p-6 rounded-2xl space-y-1.5">
-          <div class="text-brand-emerald font-bold fluid-h3" data-i18n="p2_role">Agronomist</div>
-          <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p2_roledesc">
-            Verify AI diagnoses from your phone and turn every field correction into model retraining data.
-          </p>
-        </div>
-        <div class="floating-wide-card p-4 sm:p-6 rounded-2xl space-y-1.5">
-          <div class="text-brand-emerald font-bold fluid-h3" data-i18n="p3_role">Rover Operator</div>
-          <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p3_roledesc">
-            Start, pause, and recall the rover with three big buttons — even while wearing thick field gloves.
-          </p>
-        </div>
-        <div class="floating-wide-card p-4 sm:p-6 rounded-2xl space-y-1.5">
-          <div class="text-brand-emerald font-bold fluid-h3" data-i18n="p4_role">Farm Manager</div>
-          <p class="fluid-caption text-white/70 leading-relaxed" data-i18n="p4_roledesc">
-            Plan harvest around automatic PHI hardware locks and know every row is GlobalG.A.P. compliant.
-          </p>
+          <div class="pt-4 flex items-center justify-center">
+            <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption uppercase tracking-wider transition-all shadow-lg shadow-emerald-900/30 hover:scale-105" data-i18n="pilot_cta">
+              Apply for Pilot Demonstration
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 9. SECTION: PILOT PROGRAM ACCEPTANCE (Floating White Layer)  -->
+    <!-- 10. SECTION: FAQ ACCORDION<!-- 10. SECTION: FAQ ACCORDION (Full Screen Height, Dark Glass)  -->
     <!-- ============================================================ -->
-    <section class="w-[min(94vw,1200px)] mx-auto py-6 sm:py-10 scroll-reveal">
-      <div class="floating-white-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center border border-emerald-300/70 relative overflow-hidden">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300/80 fluid-micro font-semibold mb-3.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
-          <span data-i18n="pilot_badge">Pilot Program · Season 2026/2027</span>
-        </div>
-        <h3 class="fluid-h2 font-bold text-slate-900 tracking-tight max-w-2xl mx-auto" data-i18n="pilot_title">
-          Now Accepting 3 Commercial Greenhouses in Egypt
-        </h3>
-        <p class="text-slate-600 fluid-body max-w-lg mx-auto mt-2.5 sm:mt-3 leading-relaxed px-2" data-i18n="pilot_desc">
-          We bring the rover to your greenhouse in Ismailia, Sharqia, or Beheira for a live demonstration scan — zero obligation, zero internet required.
-        </p>
-        <div class="mt-6 flex items-center justify-center">
-          <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold fluid-caption uppercase tracking-wider transition-all shadow-lg shadow-emerald-900/20 hover:scale-105" data-i18n="pilot_cta">
-            Apply for Pilot Demonstration
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- 10. SECTION: FAQ ACCORDION (6 Questions)                     -->
-    <!-- ============================================================ -->
-    <section id="faq-section" class="w-[min(92vw,900px)] mx-auto fluid-section scroll-reveal">
-      
-      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
-        <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="faq_badge">Got Questions?</span>
-        <h2 class="fluid-h2 font-semibold text-white tracking-tight mt-1" data-i18n="faq_title">
-          Frequently Asked Questions
-        </h2>
-      </div>
-
-      <div class="space-y-2.5 sm:space-y-3 text-left rtl:text-right" id="faq-accordion">
-        
-        <!-- Q1 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq1_q">Does it really work without internet?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq1_a">
-            Yes. A local 2.4 GHz outdoor access point at the greenhouse entrance connects the rover and tablet. Everything — scanning, YOLOv11 inference, spraying, and the dashboard — runs 100% locally. Cloud sync is an optional one-click action when you return to the office.
-          </div>
+    <section id="faq-section" class="w-full min-h-screen flex flex-col justify-center py-16 sm:py-24 scroll-reveal">
+      <div class="max-w-3xl mx-auto px-5 sm:px-6 w-full my-auto">
+        <div class="mb-10 text-left rtl:text-right space-y-1.5">
+          <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="faq_badge">Got Questions?</span>
+          <h2 class="fluid-h2 font-bold text-white tracking-tight" data-i18n="faq_title">
+            Frequently Asked Questions
+          </h2>
         </div>
 
-        <!-- Q2 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq2_q">What diseases can Faddan detect?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq2_a">
-            Botrytis Gray Mold, Powdery Mildew, and Spider Mites today at verified 90%+ confidence. The model architecture is extensible to other diseases, and your agronomist’s field corrections retrain it on your cultivar.
-          </div>
-        </div>
-
-        <!-- Q3 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq3_q">How much chemical does it actually save?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq3_a">
-            In standard 12-row greenhouses (100m rows), Faddan consumes 3.2 L per cycle instead of the conventional 15.0 L blanket mist — an audited 78.6% reduction in chemical volume and cost.
-          </div>
-        </div>
-
-        <!-- Q4 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq4_q">What happens near harvest time?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq4_a">
-            Rows within 3 days of harvest are automatically hardware-locked against spraying (PHI lock). Solenoid valves are electrically disconnected for those rows, ensuring export compliance.
-          </div>
-        </div>
-
-        <!-- Q5 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq5_q">What if the rover gets stuck or battery runs low?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq5_a">
-            The rover monitors motors, nozzles, and battery continuously. On any fault or obstacle, it halts safely and transmits exact row and meter coordinates. If battery drops below 15%, it automatically returns to the docking head.
-          </div>
-        </div>
-
-        <!-- Q6 -->
-        <div class="faq-item floating-wide-card rounded-xl sm:rounded-2xl p-4 sm:p-5 cursor-pointer" onclick="toggleFaq(this)">
-          <div class="flex items-center justify-between fluid-body font-semibold text-white gap-2">
-            <span data-i18n="faq6_q">How do I get started with Faddan?</span>
-            <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
-          </div>
-          <div class="faq-answer fluid-caption text-white/70 mt-2 leading-relaxed" data-i18n="faq6_a">
-            Book a field demo. Our robotics team brings the rover to your greenhouse, runs a live under-canopy scan on your own strawberry beds, and demonstrates the exact chemical savings in person.
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- 11. FINAL CTA BAND                                           -->
-    <!-- ============================================================ -->
-    <section class="w-[min(94vw,1200px)] mx-auto fluid-section scroll-reveal">
-      <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-14 text-center bg-gradient-to-br from-[#0B2215] to-[#05140B] border border-brand-emerald/30">
-        <h2 class="fluid-h1 font-semibold text-white tracking-tight" data-i18n="cta_final_title">
-          See Faddan work your rows.
-        </h2>
-        <p class="text-white/70 fluid-body max-w-xl mx-auto mt-2.5 sm:mt-3 leading-relaxed px-2" data-i18n="cta_final_desc">
-          We’ll bring the rover to your greenhouse for a live demonstration scan — no obligation, no internet required.
-        </p>
-        <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
-          <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption uppercase tracking-wider transition-all shadow-lg hover:scale-105" data-i18n="btn_book_demo">
-            Book a Field Demo
-          </button>
-          <a href="mailto:contact@faddan.ai" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium fluid-caption border border-white/10 transition-all text-center" data-i18n="cta_contact_team">
-            Talk to Our Team First →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- 12. LUXURY FOOTER (Fluid Stacked)                            -->
-    <!-- ============================================================ -->
-    <footer class="w-[min(94vw,1200px)] mx-auto px-4 sm:px-6 py-8 sm:py-12 border-t border-white/5 fluid-caption text-white/50 space-y-6 sm:space-y-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 text-left rtl:text-right">
-        
-        <div class="space-y-2.5 sm:space-y-3 md:col-span-2">
-          <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded-lg bg-white/5 p-1 flex items-center justify-center">
-              <img src="assets/faddan-logo.png" alt="Faddan" class="w-full h-full object-contain" />
+        <div class="space-y-4 text-left rtl:text-right" id="faq-accordion">
+          
+          <!-- Q1 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq1_q">Does it really work without internet?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
             </div>
-            <span class="font-bold text-white fluid-body">faddan | فدّان</span>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq1_a">
+              Yes. A local 2.4 GHz outdoor access point at the greenhouse entrance connects the rover and tablet. Everything — scanning, YOLOv11 inference, spraying, and the dashboard — runs 100% locally. Cloud sync is an optional one-click action when you return to the office.
+            </div>
           </div>
-          <p class="text-white/60 max-w-sm fluid-caption leading-relaxed" data-i18n="footer_summary">
-            Autonomous spot-spraying robotics engineered for Egyptian strawberry greenhouses. Built in Egypt, for Egyptian farms.
-          </p>
-          <div class="fluid-micro text-white/40">
-            © 2026 Faddan AI Robotics · Cairo, Egypt.
+
+          <!-- Q2 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq2_q">What diseases can Faddan detect?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
+            </div>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq2_a">
+              Botrytis Gray Mold, Powdery Mildew, and Spider Mites today at verified 90%+ confidence. The model architecture is extensible to other diseases, and your agronomist’s field corrections retrain it on your cultivar.
+            </div>
           </div>
-        </div>
 
-        <div class="space-y-1.5 sm:space-y-2">
-          <div class="text-white font-semibold fluid-caption mb-1" data-i18n="foot_links">Product</div>
-          <div><a href="#hero" class="hover:text-white transition-colors">Technology</a></div>
-          <div><a href="#solution-showcase" class="hover:text-white transition-colors">Under-Canopy Demo</a></div>
-          <div><a href="#problem-section" class="hover:text-white transition-colors">78.6% Proof</a></div>
-          <div><a href="#roi-section" class="hover:text-white transition-colors">Field ROI Calculator</a></div>
-        </div>
-
-        <div class="space-y-2">
-          <div class="text-white font-semibold fluid-caption mb-1" data-i18n="foot_pilot_sub">Field Reports</div>
-          <p class="fluid-caption text-white/60" data-i18n="foot_pilot_text">Get trial reports & chemical savings data from our greenhouse pilots.</p>
-          <div class="flex gap-1.5 pt-1">
-            <input type="email" placeholder="agronomist@farm.eg" class="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 fluid-caption text-white placeholder-white/30 w-full focus:outline-none focus:border-brand-emerald" />
-            <button class="px-3 py-1.5 bg-brand-emerald text-brand-dark rounded-lg font-bold fluid-caption shrink-0">Join</button>
+          <!-- Q3 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq3_q">How much chemical does it actually save?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
+            </div>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq3_a">
+              In standard 12-row greenhouses (100m rows), Faddan consumes 3.2 L per cycle instead of the conventional 15.0 L blanket mist — an audited 78.6% reduction in chemical volume and cost.
+            </div>
           </div>
-        </div>
 
+          <!-- Q4 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq4_q">What happens near harvest time?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
+            </div>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq4_a">
+              Rows within 3 days of harvest are automatically hardware-locked against spraying (PHI lock). Solenoid valves are electrically disconnected for those rows, ensuring export compliance.
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq5_q">What if the rover gets stuck or battery runs low?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
+            </div>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq5_a">
+              The rover monitors motors, nozzles, and battery continuously. On any fault or obstacle, it halts safely and transmits exact row and meter coordinates. If battery drops below 15%, it automatically returns to the docking head.
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item floating-wide-card rounded-2xl p-5 sm:p-6 cursor-pointer border border-white/10 hover:border-brand-emerald/30 transition-all" onclick="toggleFaq(this)">
+            <div class="flex items-center justify-between fluid-body font-semibold text-white gap-3">
+              <span data-i18n="faq6_q">How do I get started with Faddan?</span>
+              <span class="faq-icon text-white/50 fluid-micro transition-transform shrink-0">▼</span>
+            </div>
+            <div class="faq-answer fluid-caption text-white/75 mt-3 leading-relaxed" data-i18n="faq6_a">
+              Book a field demo. Our robotics team brings the rover to your greenhouse, runs a live under-canopy scan on your own strawberry beds, and demonstrates the exact chemical savings in person.
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/5 fluid-micro text-white/40 text-center sm:text-left">
-        <div>100% Offline Edge Robotics · GlobalG.A.P. Certified Protocol</div>
-        <div class="flex items-center gap-2.5">
-          <button onclick="setLanguage('en')" class="hover:text-white">English</button>
-          <span>/</span>
-          <button onclick="setLanguage('ar')" class="hover:text-white font-arabic">العربية</button>
+    <!-- ============================================================ -->
+    <!-- 11. FINAL CTA BAND (Full Screen Height, The Spacious Hero)   -->
+    <!-- ============================================================ -->
+    <section class="w-full min-h-screen flex flex-col justify-center py-16 sm:py-24 scroll-reveal">
+      <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 w-full my-auto">
+        <div class="floating-wide-card rounded-2xl sm:rounded-3xl p-8 sm:p-14 lg:p-18 text-center bg-gradient-to-br from-[#0D2E1B] to-[#05140B] border border-brand-emerald/40 shadow-2xl relative overflow-hidden">
+          <h2 class="fluid-h1 font-bold text-white tracking-tight" data-i18n="cta_final_title">
+            See Faddan work your rows.
+          </h2>
+          <p class="text-white/75 fluid-body max-w-xl mx-auto mt-4 leading-relaxed px-2" data-i18n="cta_final_desc">
+            We’ll bring the rover to your greenhouse for a live demonstration scan — no obligation, no internet required.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
+            <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption uppercase tracking-wider transition-all shadow-lg hover:scale-105" data-i18n="btn_book_demo">
+              Book a Field Demo
+            </button>
+            <a href="mailto:contact@faddan.ai" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-medium fluid-caption border border-white/15 transition-all text-center hover:border-white/30" data-i18n="cta_contact_team">
+              Talk to Our Team First →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 12. LUXURY FOOTER                                            -->
+    <!-- ============================================================ -->
+    <footer class="w-full border-t border-white/10 py-12 sm:py-16 fluid-caption text-white/60 bg-[#030B06]/90 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left rtl:text-right">
+          
+          <div class="space-y-3 md:col-span-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 border border-white/15 p-1.5 flex items-center justify-center shadow-inner overflow-hidden">
+                <img src="assets/faddan-logo.png" alt="Faddan Logo" class="w-full h-full object-contain transform scale-90" />
+              </div>
+              <span class="font-bold text-white text-base sm:text-lg tracking-tight" data-i18n="brand_name">Faddan</span>
+            </div>
+            <p class="text-white/70 max-w-sm fluid-caption leading-relaxed" data-i18n="footer_summary">
+              Autonomous spot-spraying robotics engineered for Egyptian strawberry greenhouses. Built in Egypt, for Egyptian farms.
+            </p>
+            <div class="fluid-micro text-white/40">
+              © 2026 Faddan · Cairo, Egypt.
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <div class="text-white font-bold fluid-caption mb-1.5" data-i18n="foot_links">Product</div>
+            <div><a href="#hero" class="hover:text-brand-accent transition-colors">Technology</a></div>
+            <div><a href="#solution-showcase" class="hover:text-brand-accent transition-colors">Under-Canopy Demo</a></div>
+            <div><a href="#problem-section" class="hover:text-brand-accent transition-colors">78.6% Proof</a></div>
+            <div><a href="#roi-section" class="hover:text-brand-accent transition-colors">Field ROI Calculator</a></div>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="text-white font-bold fluid-caption mb-1.5" data-i18n="foot_pilot_sub">Field Reports</div>
+            <p class="fluid-caption text-white/70" data-i18n="foot_pilot_text">Get trial reports & chemical savings data from our greenhouse pilots.</p>
+            <div class="flex gap-2 pt-1">
+              <input type="email" placeholder="agronomist@farm.eg" class="bg-white/5 border border-white/10 rounded-xl px-3 py-2 fluid-caption text-white placeholder-white/30 w-full focus:outline-none focus:border-brand-emerald" />
+              <button class="px-4 py-2 bg-brand-emerald text-brand-dark rounded-xl font-bold fluid-caption shrink-0 hover:bg-brand-accent transition-colors">Join</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/10 fluid-micro text-white/50 text-center sm:text-left rtl:sm:text-right">
+          <div>100% Offline Edge Robotics · GlobalG.A.P. Certified Protocol</div>
+          <div class="flex items-center gap-3">
+            <button onclick="setLanguage('en')" class="hover:text-white transition-colors">English</button>
+            <span>/</span>
+            <button onclick="setLanguage('ar')" class="hover:text-white font-arabic transition-colors">العربية</button>
+          </div>
         </div>
       </div>
     </footer>
@@ -1271,24 +1277,24 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- FIELD DEMO BOOKING MODAL (Fluid Responsive)                 -->
+  <!-- FIELD DEMO BOOKING MODAL                                     -->
   <!-- ============================================================ -->
-  <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4">
-    <div class="floating-wide-card bg-[#0A1E12] max-w-md w-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-brand-emerald/40 relative text-left rtl:text-right max-h-[92vh] overflow-y-auto">
-      <button onclick="closeBookingModal()" class="absolute top-3.5 right-3.5 rtl:right-auto rtl:left-3.5 text-white/60 hover:text-white text-xl p-1 leading-none">&times;</button>
+  <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="floating-wide-card bg-[#0A1E12] max-w-lg w-full rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-brand-emerald/50 relative text-left rtl:text-right max-h-[92vh] overflow-y-auto shadow-2xl">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 rtl:right-auto rtl:left-4 text-white/60 hover:text-white text-2xl p-1 leading-none transition-colors" aria-label="Close">&times;</button>
       
       <span class="fluid-micro uppercase font-semibold text-brand-accent tracking-wider" data-i18n="modal_badge">Commercial Trial</span>
       <h3 class="fluid-h3 font-bold text-white mt-1" data-i18n="modal_title">Schedule a Live Field Demo</h3>
       <p class="fluid-caption text-white/70 mt-1" data-i18n="modal_desc">We'll bring Faddan to your greenhouse for a live test scan on your rows.</p>
 
-      <form onsubmit="handleDemoSubmit(event)" class="mt-4 sm:mt-5 space-y-3 fluid-caption">
+      <form onsubmit="handleDemoSubmit(event)" class="mt-5 space-y-3.5 fluid-caption">
         <div>
-          <label class="block text-white/70 mb-1" data-i18n="m_farm">Farm or Company Name</label>
-          <input required type="text" placeholder="e.g. Al-Amal Farm" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-emerald fluid-caption" />
+          <label class="block text-white/80 font-medium mb-1" data-i18n="m_farm">Farm or Company Name</label>
+          <input required type="text" placeholder="e.g. Al-Amal Farm" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-emerald fluid-caption" />
         </div>
         <div>
-          <label class="block text-white/70 mb-1" data-i18n="m_loc">Location (Governorate)</label>
-          <select class="w-full bg-[#0E2818] border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-emerald fluid-caption">
+          <label class="block text-white/80 font-medium mb-1" data-i18n="m_loc">Location (Governorate)</label>
+          <select class="w-full bg-[#0E2818] border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-emerald fluid-caption">
             <option>Ismailia (الإسماعيلية)</option>
             <option>Sharqia (الشرقية)</option>
             <option>Beheira / Nubaria (البحيرة / النوبارية)</option>
@@ -1297,10 +1303,10 @@
           </select>
         </div>
         <div>
-          <label class="block text-white/70 mb-1" data-i18n="m_phone">Phone / WhatsApp</label>
-          <input required type="tel" placeholder="+20 10X XXX XXXX" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-brand-emerald fluid-caption" />
+          <label class="block text-white/80 font-medium mb-1" data-i18n="m_phone">Phone / WhatsApp</label>
+          <input required type="tel" placeholder="+20 10X XXX XXXX" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-emerald fluid-caption" />
         </div>
-        <button type="submit" class="w-full py-2.5 sm:py-3 rounded-xl bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption tracking-wider uppercase transition-all mt-4" data-i18n="m_submit">
+        <button type="submit" class="w-full py-3 rounded-xl bg-brand-emerald hover:bg-brand-accent text-brand-dark font-bold fluid-caption tracking-wider uppercase transition-all mt-4 shadow-lg shadow-emerald-500/20" data-i18n="m_submit">
           Confirm Demonstration Request
         </button>
       </form>
@@ -1308,14 +1314,12 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- JAVASCRIPT: BILINGUAL TRANSLATION & LOGIC                    -->
+  <!-- JAVASCRIPT: BILINGUAL TRANSLATION & SCROLL DYNAMICS          -->
   <!-- ============================================================ -->
   <script>
     const translations = {
       en: {
-        ann_badge: "Pilot 2026:",
-        ann_text: "Built for Egyptian greenhouses • 100% Offline Edge Vision",
-        ann_sub: "Ismailia · Sharqia · Beheira",
+        brand_name: "Faddan",
         tagline: "Agri-Robotics",
         nav_tech: "Technology",
         nav_canopy: "Under-Canopy",
@@ -1466,9 +1470,7 @@
         m_submit: "Confirm Demonstration Request"
       },
       ar: {
-        ann_badge: "التشغيل التجريبي 2026:",
-        ann_text: "مخصص لصوب الفراولة المصرية • رؤية حاسوبية 100% بدون إنترنت",
-        ann_sub: "الإسماعيلية · الشرقية · البحيرة",
+        brand_name: "فدان",
         tagline: "روبوتات زراعية ذكية",
         nav_tech: "التكنولوجيا",
         nav_canopy: "المحاكاة البصرية",
@@ -1631,11 +1633,11 @@
       const btnEn = document.getElementById('lang-en');
       const btnAr = document.getElementById('lang-ar');
       if (lang === 'en') {
-        btnEn.className = "px-2.5 py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-sans";
-        btnAr.className = "px-2.5 py-1 rounded-full transition-all text-white/70 hover:text-white font-arabic";
+        btnEn.className = "px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-sans font-bold";
+        btnAr.className = "px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-white/70 hover:text-white font-arabic";
       } else {
-        btnAr.className = "px-2.5 py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-arabic font-bold";
-        btnEn.className = "px-2.5 py-1 rounded-full transition-all text-white/70 hover:text-white font-sans";
+        btnAr.className = "px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-brand-dark bg-brand-emerald shadow-sm font-arabic font-bold";
+        btnEn.className = "px-2.5 py-0.5 sm:py-1 rounded-full transition-all text-white/70 hover:text-white font-sans";
       }
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1647,6 +1649,18 @@
 
       updateROI();
     }
+
+    // Dynamic Navbar Scroll Effect (Seamless integrated at Hero, glassmorphic on scroll)
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 40) {
+        header.classList.remove('bg-transparent', 'border-transparent');
+        header.classList.add('bg-[#05140B]/90', 'backdrop-blur-md', 'border-white/10', 'shadow-lg', 'shadow-black/30');
+      } else {
+        header.classList.add('bg-transparent', 'border-transparent');
+        header.classList.remove('bg-[#05140B]/90', 'backdrop-blur-md', 'border-white/10', 'shadow-lg', 'shadow-black/30');
+      }
+    });
 
     // Carousel logic
     let currentSlide = 0;
@@ -1662,10 +1676,14 @@
 
         if (i === currentSlide) {
           slideEl.classList.add('active');
-          tabBtn.className = "tab-indicator p-2.5 sm:p-3 rounded-xl bg-white/10 border border-brand-emerald/40 text-left rtl:text-right transition-all";
+          tabBtn.className = "tab-indicator p-3 sm:p-3.5 rounded-xl bg-white/10 border border-brand-emerald/50 text-left rtl:text-right transition-all shadow-sm";
+          const subEl = tabBtn.querySelector('[data-i18n$="_sub"]');
+          if (subEl) subEl.className = "fluid-micro text-brand-accent font-bold uppercase tracking-wider";
         } else {
           slideEl.classList.remove('active');
-          tabBtn.className = "tab-indicator p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/5 text-left rtl:text-right hover:bg-white/10 transition-all";
+          tabBtn.className = "tab-indicator p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10 text-left rtl:text-right hover:bg-white/10 transition-all";
+          const subEl = tabBtn.querySelector('[data-i18n$="_sub"]');
+          if (subEl) subEl.className = "fluid-micro text-white/50 font-bold uppercase tracking-wider";
         }
       }
 
@@ -1737,12 +1755,6 @@
       if (!isActive) {
         item.classList.add('active');
       }
-    }
-
-    // Dismiss Announcement
-    function dismissAnnouncement() {
-      const bar = document.getElementById('announcement-bar');
-      if (bar) bar.style.display = 'none';
     }
 
     // Booking Modal
